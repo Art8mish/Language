@@ -1,0 +1,424 @@
+
+Struct Asm : char_buffer[00DF2A78], chars_count 803, code_buffer[00DF3C28], lines_count 95
+
+
+DUMP
+
+Code: 
+5.92879e-323 6.47592e-319 4.94066e-324 5.92879e-323 6.47592e-319 9.88131e-324 5.92879e-323 6.47592e-319 1.4822e-323 6.47587e-319 4.94066e-324 3.23796e-319 0 4.94066e-323 3.24423e-319 0 3.23811e-319 0 6.47587e-319 9.88131e-324 3.23796e-319 0 3.24423e-319 0 6.47587e-319 1.4822e-323 3.23796e-319 -1 2.96439e-323 6.47587e-319 9.88131e-324 3.45846e-323 5.43472e-323 3.23811e-319 0 6.47587e-319 1.4822e-323 3.23796e-319 0 3.24423e-319 0 3.23811e-319 0 3.23796e-319 70 3.23796e-319 78 3.23796e-319 73 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9902 6.42285e-323 3.23811e-319 0 3.23796e-319 76 3.23796e-319 79 3.23796e-319 83 3.23796e-319 79 3.23796e-319 78 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9903 1.61896e-318 9904 1.61896e-318 9905 6.42285e-323 3.23811e-319 0 6.47587e-319 9.88131e-324 6.47587e-319 9.88131e-324 2.96439e-323 3.23796e-319 4 6.47587e-319 4.94066e-324 2.96439e-323 6.47587e-319 1.4822e-323 2.96439e-323 2.47033e-323 6.47592e-319 1.97626e-323 9.71378e-319 20 1.97626e-323 4.94066e-323 6.47587e-319 1.97626e-323 3.23796e-319 0 3.2383e-319 2.86558e-322 6.47587e-319 1.97626e-323 3.23796e-319 0 3.24423e-319 0 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 2.47033e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 1.4822e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 0 
+
+12  IN  
+2   POP  : 1 (reg)
+12  IN  
+2   POP  : 2 (reg)
+12  IN  
+2   POP  : 3 (reg)
+1   PUSH : 1 (reg)
+1   PUSH : 0 (num)
+10  DUMP
+128 JE   : 0 (num)
+4   JMP  : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+1   PUSH : 3 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 2 (reg)
+7   DIV 
+11  OUT 
+4   JMP  : 0 (num)
+1   PUSH : 3 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+4   JMP  : 0 (num)
+1   PUSH : 70 (num)
+1   PUSH : 78 (num)
+1   PUSH : 73 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9902 (num)
+13  RAM 
+4   JMP  : 0 (num)
+1   PUSH : 76 (num)
+1   PUSH : 79 (num)
+1   PUSH : 83 (num)
+1   PUSH : 79 (num)
+1   PUSH : 78 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9903 (num)
+2   POP  : RAM : 9904 (num)
+2   POP  : RAM : 9905 (num)
+13  RAM 
+4   JMP  : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 2 (reg)
+6   MUL 
+1   PUSH : 4 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+1   PUSH : 3 (reg)
+6   MUL 
+5   SUB 
+2   POP  : 4 (reg)
+1   PUSH : 20.000000 (num) & 4 (reg)
+10  DUMP
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+8   JB   : 2.86558e-322 (num)
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+5   SUB 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+3   ADD 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+0   HLT 
+
+labels: 
+labels[0].name = start, labels[0].value = 9
+labels[1].name = nula, labels[1].value = 18
+labels[2].name = nulab, labels[2].value = 35
+labels[3].name = inf, labels[3].value = 43
+labels[4].name = nosol, labels[4].value = 58
+labels[5].name = twos, labels[5].value = 81
+labels[6].name = dnul, labels[6].value = 129
+labels[7].name = end, labels[7].value = 145
+labels[8].name = , labels[8].value = 0
+labels[9].name = , labels[9].value = 0
+
+
+DUMP
+
+Code: 
+5.92879e-323 6.47592e-319 4.94066e-324 5.92879e-323 6.47592e-319 9.88131e-324 5.92879e-323 6.47592e-319 1.4822e-323 6.47587e-319 4.94066e-324 3.23796e-319 0 4.94066e-323 3.24423e-319 8.89318e-323 3.23811e-319 4.00193e-322 6.47587e-319 9.88131e-324 3.23796e-319 0 3.24423e-319 1.72923e-322 6.47587e-319 1.4822e-323 3.23796e-319 -1 2.96439e-323 6.47587e-319 9.88131e-324 3.45846e-323 5.43472e-323 3.23811e-319 7.16395e-322 6.47587e-319 1.4822e-323 3.23796e-319 0 3.24423e-319 2.12448e-322 3.23811e-319 2.86558e-322 3.23796e-319 70 3.23796e-319 78 3.23796e-319 73 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9902 6.42285e-323 3.23811e-319 7.16395e-322 3.23796e-319 76 3.23796e-319 79 3.23796e-319 83 3.23796e-319 79 3.23796e-319 78 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9903 1.61896e-318 9904 1.61896e-318 9905 6.42285e-323 3.23811e-319 7.16395e-322 6.47587e-319 9.88131e-324 6.47587e-319 9.88131e-324 2.96439e-323 3.23796e-319 4 6.47587e-319 4.94066e-324 2.96439e-323 6.47587e-319 1.4822e-323 2.96439e-323 2.47033e-323 6.47592e-319 1.97626e-323 9.71378e-319 20 1.97626e-323 4.94066e-323 6.47587e-319 1.97626e-323 3.23796e-319 0 3.2383e-319 2.86558e-322 6.47587e-319 1.97626e-323 3.23796e-319 0 3.24423e-319 6.37345e-322 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 2.47033e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 1.4822e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 0 
+
+12  IN  
+2   POP  : 1 (reg)
+12  IN  
+2   POP  : 2 (reg)
+12  IN  
+2   POP  : 3 (reg)
+1   PUSH : 1 (reg)
+1   PUSH : 0 (num)
+10  DUMP
+128 JE   : 8.89318e-323 (num)
+4   JMP  : 4.00193e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 0 (num)
+128 JE   : 1.72923e-322 (num)
+1   PUSH : 3 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 2 (reg)
+7   DIV 
+11  OUT 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 3 (reg)
+1   PUSH : 0 (num)
+128 JE   : 2.12448e-322 (num)
+4   JMP  : 2.86558e-322 (num)
+1   PUSH : 70 (num)
+1   PUSH : 78 (num)
+1   PUSH : 73 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9902 (num)
+13  RAM 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 76 (num)
+1   PUSH : 79 (num)
+1   PUSH : 83 (num)
+1   PUSH : 79 (num)
+1   PUSH : 78 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9903 (num)
+2   POP  : RAM : 9904 (num)
+2   POP  : RAM : 9905 (num)
+13  RAM 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 2 (reg)
+6   MUL 
+1   PUSH : 4 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+1   PUSH : 3 (reg)
+6   MUL 
+5   SUB 
+2   POP  : 4 (reg)
+1   PUSH : 20.000000 (num) & 4 (reg)
+10  DUMP
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+8   JB   : 2.86558e-322 (num)
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+128 JE   : 6.37345e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+5   SUB 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+3   ADD 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+0   HLT 
+
+labels: 
+labels[0].name = start, labels[0].value = 9
+labels[1].name = nula, labels[1].value = 18
+labels[2].name = nulab, labels[2].value = 35
+labels[3].name = inf, labels[3].value = 43
+labels[4].name = nosol, labels[4].value = 58
+labels[5].name = twos, labels[5].value = 81
+labels[6].name = dnul, labels[6].value = 129
+labels[7].name = end, labels[7].value = 145
+labels[8].name = , labels[8].value = 0
+labels[9].name = , labels[9].value = 0
+
+Struct Asm : char_buffer[00E30F68], chars_count 803, code_buffer[00E33400], lines_count 95
+
+
+DUMP
+
+Code: 
+5.92879e-323 6.47592e-319 4.94066e-324 5.92879e-323 6.47592e-319 9.88131e-324 5.92879e-323 6.47592e-319 1.4822e-323 6.47587e-319 4.94066e-324 3.23796e-319 0 4.94066e-323 3.24423e-319 0 3.23811e-319 0 6.47587e-319 9.88131e-324 3.23796e-319 0 3.24423e-319 0 6.47587e-319 1.4822e-323 3.23796e-319 -1 2.96439e-323 6.47587e-319 9.88131e-324 3.45846e-323 5.43472e-323 3.23811e-319 0 6.47587e-319 1.4822e-323 3.23796e-319 0 3.24423e-319 0 3.23811e-319 0 3.23796e-319 70 3.23796e-319 78 3.23796e-319 73 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9902 6.42285e-323 3.23811e-319 0 3.23796e-319 76 3.23796e-319 79 3.23796e-319 83 3.23796e-319 79 3.23796e-319 78 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9903 1.61896e-318 9904 1.61896e-318 9905 6.42285e-323 3.23811e-319 0 6.47587e-319 9.88131e-324 6.47587e-319 9.88131e-324 2.96439e-323 3.23796e-319 4 6.47587e-319 4.94066e-324 2.96439e-323 6.47587e-319 1.4822e-323 2.96439e-323 2.47033e-323 6.47592e-319 1.97626e-323 9.71378e-319 20 1.97626e-323 4.94066e-323 6.47587e-319 1.97626e-323 3.23796e-319 0 3.2383e-319 2.86558e-322 6.47587e-319 1.97626e-323 3.23796e-319 0 3.24423e-319 0 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 2.47033e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 1.4822e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 0 
+
+12  IN  
+2   POP  : 1 (reg)
+12  IN  
+2   POP  : 2 (reg)
+12  IN  
+2   POP  : 3 (reg)
+1   PUSH : 1 (reg)
+1   PUSH : 0 (num)
+10  DUMP
+128 JE   : 0 (num)
+4   JMP  : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+1   PUSH : 3 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 2 (reg)
+7   DIV 
+11  OUT 
+4   JMP  : 0 (num)
+1   PUSH : 3 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+4   JMP  : 0 (num)
+1   PUSH : 70 (num)
+1   PUSH : 78 (num)
+1   PUSH : 73 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9902 (num)
+13  RAM 
+4   JMP  : 0 (num)
+1   PUSH : 76 (num)
+1   PUSH : 79 (num)
+1   PUSH : 83 (num)
+1   PUSH : 79 (num)
+1   PUSH : 78 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9903 (num)
+2   POP  : RAM : 9904 (num)
+2   POP  : RAM : 9905 (num)
+13  RAM 
+4   JMP  : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 2 (reg)
+6   MUL 
+1   PUSH : 4 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+1   PUSH : 3 (reg)
+6   MUL 
+5   SUB 
+2   POP  : 4 (reg)
+1   PUSH : 20.000000 (num) & 4 (reg)
+10  DUMP
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+8   JB   : 2.86558e-322 (num)
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+128 JE   : 0 (num)
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+5   SUB 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+3   ADD 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+0   HLT 
+
+labels: 
+labels[0].name = start, labels[0].value = 9
+labels[1].name = nula, labels[1].value = 18
+labels[2].name = nulab, labels[2].value = 35
+labels[3].name = inf, labels[3].value = 43
+labels[4].name = nosol, labels[4].value = 58
+labels[5].name = twos, labels[5].value = 81
+labels[6].name = dnul, labels[6].value = 129
+labels[7].name = end, labels[7].value = 145
+labels[8].name = , labels[8].value = 0
+labels[9].name = , labels[9].value = 0
+
+
+DUMP
+
+Code: 
+5.92879e-323 6.47592e-319 4.94066e-324 5.92879e-323 6.47592e-319 9.88131e-324 5.92879e-323 6.47592e-319 1.4822e-323 6.47587e-319 4.94066e-324 3.23796e-319 0 4.94066e-323 3.24423e-319 8.89318e-323 3.23811e-319 4.00193e-322 6.47587e-319 9.88131e-324 3.23796e-319 0 3.24423e-319 1.72923e-322 6.47587e-319 1.4822e-323 3.23796e-319 -1 2.96439e-323 6.47587e-319 9.88131e-324 3.45846e-323 5.43472e-323 3.23811e-319 7.16395e-322 6.47587e-319 1.4822e-323 3.23796e-319 0 3.24423e-319 2.12448e-322 3.23811e-319 2.86558e-322 3.23796e-319 70 3.23796e-319 78 3.23796e-319 73 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9902 6.42285e-323 3.23811e-319 7.16395e-322 3.23796e-319 76 3.23796e-319 79 3.23796e-319 83 3.23796e-319 79 3.23796e-319 78 1.61896e-318 9900 1.61896e-318 9901 1.61896e-318 9903 1.61896e-318 9904 1.61896e-318 9905 6.42285e-323 3.23811e-319 7.16395e-322 6.47587e-319 9.88131e-324 6.47587e-319 9.88131e-324 2.96439e-323 3.23796e-319 4 6.47587e-319 4.94066e-324 2.96439e-323 6.47587e-319 1.4822e-323 2.96439e-323 2.47033e-323 6.47592e-319 1.97626e-323 9.71378e-319 20 1.97626e-323 4.94066e-323 6.47587e-319 1.97626e-323 3.23796e-319 0 3.2383e-319 2.86558e-322 6.47587e-319 1.97626e-323 3.23796e-319 0 3.24423e-319 6.37345e-322 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 2.47033e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 6.47587e-319 9.88131e-324 3.23796e-319 -1 2.96439e-323 6.47587e-319 1.97626e-323 4.44659e-323 1.4822e-323 3.23796e-319 2 6.47587e-319 4.94066e-324 2.96439e-323 3.45846e-323 5.43472e-323 0 
+
+12  IN  
+2   POP  : 1 (reg)
+12  IN  
+2   POP  : 2 (reg)
+12  IN  
+2   POP  : 3 (reg)
+1   PUSH : 1 (reg)
+1   PUSH : 0 (num)
+10  DUMP
+128 JE   : 8.89318e-323 (num)
+4   JMP  : 4.00193e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 0 (num)
+128 JE   : 1.72923e-322 (num)
+1   PUSH : 3 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 2 (reg)
+7   DIV 
+11  OUT 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 3 (reg)
+1   PUSH : 0 (num)
+128 JE   : 2.12448e-322 (num)
+4   JMP  : 2.86558e-322 (num)
+1   PUSH : 70 (num)
+1   PUSH : 78 (num)
+1   PUSH : 73 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9902 (num)
+13  RAM 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 76 (num)
+1   PUSH : 79 (num)
+1   PUSH : 83 (num)
+1   PUSH : 79 (num)
+1   PUSH : 78 (num)
+2   POP  : RAM : 9900 (num)
+2   POP  : RAM : 9901 (num)
+2   POP  : RAM : 9903 (num)
+2   POP  : RAM : 9904 (num)
+2   POP  : RAM : 9905 (num)
+13  RAM 
+4   JMP  : 7.16395e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : 2 (reg)
+6   MUL 
+1   PUSH : 4 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+1   PUSH : 3 (reg)
+6   MUL 
+5   SUB 
+2   POP  : 4 (reg)
+1   PUSH : 20.000000 (num) & 4 (reg)
+10  DUMP
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+8   JB   : 2.86558e-322 (num)
+1   PUSH : 4 (reg)
+1   PUSH : 0 (num)
+128 JE   : 6.37345e-322 (num)
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+5   SUB 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+1   PUSH : 2 (reg)
+1   PUSH : -1 (num)
+6   MUL 
+1   PUSH : 4 (reg)
+9   SQRT
+3   ADD 
+1   PUSH : 2 (num)
+1   PUSH : 1 (reg)
+6   MUL 
+7   DIV 
+11  OUT 
+0   HLT 
+
+labels: 
+labels[0].name = start, labels[0].value = 9
+labels[1].name = nula, labels[1].value = 18
+labels[2].name = nulab, labels[2].value = 35
+labels[3].name = inf, labels[3].value = 43
+labels[4].name = nosol, labels[4].value = 58
+labels[5].name = twos, labels[5].value = 81
+labels[6].name = dnul, labels[6].value = 129
+labels[7].name = end, labels[7].value = 145
+labels[8].name = , labels[8].value = 0
+labels[9].name = , labels[9].value = 0

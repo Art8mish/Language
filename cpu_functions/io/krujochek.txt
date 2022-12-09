@@ -1,0 +1,53 @@
+push 45
+pop rax
+push 0
+pop rbx
+dump
+jmp :iter
+
+end:
+dump
+ram
+hlt
+
+iter:
+
+call :CountCoord
+call :PrintPoint
+call :IncrIndex
+
+push rbx
+push 360
+je :end
+jmp :iter
+
+CountCoord:
+push rax
+push rbx
+rsin
+push 50
+add
+push 100
+mul
+
+push 50
+push rax
+push rbx
+rcos
+sub
+
+add
+pop rcx
+ret
+
+PrintPoint:
+push 64
+pop [rcx]
+ret
+
+IncrIndex:
+push rbx
+push 1
+add
+pop rbx
+ret

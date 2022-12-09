@@ -1,0 +1,27 @@
+dump
+push 1
+push 2
+add
+dump
+pop rax
+dump
+
+call :48
+jmp :end
+
+end:
+push 5
+push rax
+add
+pop rax
+dump
+hlt
+
+48:
+dump
+push 5
+pop [4+rax]
+dump
+push 5
+dump
+ret

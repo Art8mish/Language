@@ -1,0 +1,57 @@
+in
+pop rax
+
+push 1
+pop rbx
+
+start:
+
+push rax
+push 0
+jb :null
+
+push rax
+push 1
+jbe :one
+
+call :factorial
+
+end:
+out
+hlt
+
+
+factorial:
+push rbx
+push rax
+push 1
+je :endfactorial
+pop rbx
+
+call :iter
+call :factorial
+
+endfactorial:
+ret
+
+iter:
+push rbx
+push rax
+mul
+pop rbx
+
+push rax
+push 1
+sub
+pop rax
+ret
+
+null:
+push 0
+jmp :end
+
+one:
+push 1
+jmp :end
+
+
