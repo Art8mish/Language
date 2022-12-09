@@ -43,7 +43,7 @@ LexStruct *LexicalAnalisis(char *buf)
         ERROR_CHECK(read_val_err, NULL);
 
         lex_structs[index].struct_ip = index;
-        int pr_arg_err = ProcessLexArg(&lex_structs[index], value, &buf);
+        int pr_arg_err = ProcessLexArg(lex_structs, value, &buf, &index);
         ERROR_CHECK(pr_arg_err, NULL);
         index++;
 
@@ -54,14 +54,105 @@ LexStruct *LexicalAnalisis(char *buf)
 }
 
 
-int ProcessLexArg(LexStruct *lex_struct, char *value, char **buf)
+int ProcessLexArg(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
 {
-    ERROR_CHECK(lex_struct == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(value      == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(value       == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(*buf        == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(buf         == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(index       == NULL, ERROR_NULL_PTR);
+
+    if (strcmp(value, "var") == 0)
+    {   
+        lex_structs[*index].type = LT_VAR;
+        (*index)++;
+
+        int proc_var_err = ProcessVarInit(lex_structs, buf, index);
+        ERROR_CHECK(proc_var_err, ERROR_PROCESS_VAR_INIT);
+    }
+
+    else
+        return NULL;
 
     return SUCCESS;
 }
 
+
+int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
+{
+    ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(*buf        == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(buf         == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(index       == NULL, ERROR_NULL_PTR);
+
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+
+//read var name
+    char str[MAX_STR_SIZE] = { 0 }; 
+    int i = 0;
+    while (**buf != '=' && !isspace(**buf))
+    {
+        str[i++] = *((*buf)++);
+        ERROR_CHECK(i == MAX_STR_SIZE - 1, ERROR_LONG_STR);
+        EOF_CHECK(*buf, ERROR_SYNTAX);
+    }
+    str[i] = '\0';
+
+    lex_structs[*index].type = LT_STR;
+    lex_structs[*index].str  = strdup(str);
+    (*index)++;
+
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    ERROR_CHECK(**buf != '=', ERROR_SYNTAX);
+    (*buf)++;
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+
+//read init val
+    i = 0;                                  
+    while (**buf != ';' && !isspace(**buf))
+    {
+        str[i++] = *((*buf)++);
+        ERROR_CHECK(i == MAX_STR_SIZE - 1, ERROR_LONG_STR);
+        EOF_CHECK(*buf, ERROR_SYNTAX);
+    }
+    str[i] = '\0';
+
+    if (isdigit(str[0]))
+    {
+        double num = ConvertStrToNum(str);
+        ERROR_CHECK(isnan(num), ERROR_CONVERT_STR_TO_NUM);
+        lex_structs[*index].type = LT_NUM;
+        lex_structs[*index].num  = num;
+        (*index)++;
+    }
+    
+    else
+    {
+        lex_structs[*index].type = LT_STR;
+        lex_structs[*index].str  = strdup(str);
+        (*index)++;
+    }
+
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    ERROR_CHECK(**buf != ';', ERROR_SYNTAX);
+    (*buf)++;
+
+    return SUCCESS;
+}
+
+int ProcessFunction(LexStruct *lex_struct, char *value, char **buf)
+{
+    ERROR_CHECK(lex_struct == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(value      == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(*buf       == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(buf        == NULL, ERROR_NULL_PTR);
+
+
+
+
+
+    return SUCCESS;
+}
 
 
 /*
@@ -331,7 +422,8 @@ double ConvertStrToNum(const char *string)
             degree *= 0.1;
         }
     }
-    
+
+    ERROR_CHECK(*string != '\0', NAN);
     num *= sign;
 
     return num;

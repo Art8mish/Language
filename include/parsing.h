@@ -3,36 +3,39 @@
 
 #include "language.h"
 
-#define SKIP_SPACE(buf, success)                            \
+#define EOF_CHECK(buf, err)                                 \
+            do {                                            \
+                if (*(buf) == EOF)                          \
+                    return err;                             \
+            } while (false)
+
+
+#define SKIP_SPACE(buf, err)                                \
             while(isspace(*(buf)) || *(buf) == '\0')        \
             {                                               \
                 (buf)++;                                    \
-                if (*(buf) == EOF)                          \
-                    return success;                         \
+                EOF_CHECK(buf, err);                        \
             }
 
 #define SKIP_SPACE_STR(buf)                                 \
             while(isspace(*(buf)))                          \
             {                                               \
                 (buf)++;                                    \
-                if (*(buf) == EOF)                          \
-                    return NULL;                            \
+                EOF_CHECK(buf, NULL);                       \
             }
 
 #define SKIP_COMMENT(buf, err)                              \
             while(*(buf) != '>')                            \
             {                                               \
                 (buf)++;                                    \
-                if (*(buf) == EOF)                          \
-                    return err;                             \
+                EOF_CHECK(buf, err);                        \
             }
 
 #define SKIP_EXPANSION(buf, err)                            \
             while(*(buf) != '$')                            \
             {                                               \
                 (buf)++;                                    \
-                if (*(buf) == EOF)                          \
-                    return err;                             \
+                EOF_CHECK(buf, err);                        \
             }
 
 
@@ -87,7 +90,9 @@ struct LangLexicalElem
 
 enum LexError
 {
-    ERROR_FULL_LEX_STRUCT = 1,
+    ERROR_FULL_LEX_STRUCT  = 1,
+    ERROR_LONG_STR         = 2,
+    ERROR_PROCESS_VAR_INIT = 3,
 };
 
 typedef struct LangLexicalElem LexStruct;
@@ -101,7 +106,7 @@ int InitializeLexStructs(LexStruct *lex_structs);
 LexStruct *LexicalAnalisis(char *buf);
 
 double ConvertStrToNum(const char *string);
-int ProcessLexArg(LexStruct *lex_struct, char *value, char **buf);
+int ProcessLexArg(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
 
 
 

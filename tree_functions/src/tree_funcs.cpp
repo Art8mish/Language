@@ -529,7 +529,7 @@ struct LangNode *ProcessTreeValue(char *value)
     else if (isdigit(value[0]))
     {
         double num = ConvertStrToNum(value);
-        ERROR_CHECK(isnan(num) != 0, NULL);
+        ERROR_CHECK(isnan(num), NULL);
 
         new_struct->type = T_NUM;
         new_struct->num  = num;
