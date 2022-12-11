@@ -10,6 +10,9 @@
 #include "math.h"
 #include "common.h"
 
+static const char *const  LOG_FILE_PATH = "io/log.txt";
+static const char *const CODE_FILE_PATH = "io/code.txt";
+
 enum NodeType
 {
     T_NIL = 0,
@@ -66,7 +69,7 @@ struct Var
     unsigned int adress = 0;
 };
 
-
+struct Tree *LangTreeDeserialize(const char *input_file_name);
 
 #include "parsing.h"
 

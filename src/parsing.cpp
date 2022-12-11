@@ -1,6 +1,21 @@
 
 #include "../include/parsing.h"
 
+#define READ_WHILE(str, cond)                                                   \
+        do                                                                      \
+        {                                                                       \
+            int i = 0;                                                          \
+            while (cond)                                                        \
+            {                                                                   \
+                str[i++] = *((*buf)++);                                         \
+                LEX_ERROR(i == MAX_STR_SIZE - 1, ERROR_LONG_STR, *index);       \
+                EOF_CHECK(*buf, ERROR_SYNTAX);                                  \
+            }                                                                   \
+            str[i] = '\0';                                                      \
+            printf("readed str: %s\n", str);                                    \
+        } while (false)
+        
+
 int InitializeLexStructs(LexStruct *lex_structs)
 {
     ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
@@ -16,7 +31,7 @@ int InitializeLexStructs(LexStruct *lex_structs)
     return SUCCESS;
 }
 
-LexStruct *LexicalAnalisis(char *buf)
+LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount)
 {
     ERROR_CHECK(buf == NULL, NULL);
 
@@ -30,7 +45,7 @@ LexStruct *LexicalAnalisis(char *buf)
 
     LEX_SKIP_SPACE(buf);
 
-    if ((*buf) != EOF)
+    if ((*buf) == EOF)
     {
         free(lex_structs);
         return NULL;
@@ -42,110 +57,262 @@ LexStruct *LexicalAnalisis(char *buf)
         int read_val_err = ReadValue(value, &buf);
         ERROR_CHECK(read_val_err, NULL);
 
-        lex_structs[index].struct_ip = index;
-        int pr_arg_err = ProcessLexArg(lex_structs, value, &buf, &index);
-        ERROR_CHECK(pr_arg_err, NULL);
-        index++;
+        int proc_arg_err = ProcessLexValue(lex_structs, value, &buf, &index);
+        ERROR_CHECK(proc_arg_err, NULL);
 
         LEX_SKIP_SPACE(buf);
     }
 
+    lex_structs[index].type = LT_END;
+    index++;
+    *lex_structs_amount = index;
+
     return lex_structs; 
 }
 
+        
 
-int ProcessLexArg(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
+
+int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
 {
-    ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(value       == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(*buf        == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(buf         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(index       == NULL, ERROR_NULL_PTR);
+    LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(value       == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(*buf        == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
 
     if (strcmp(value, "var") == 0)
     {   
+        printf("entered var\n");
         lex_structs[*index].type = LT_VAR;
         (*index)++;
 
         int proc_var_err = ProcessVarInit(lex_structs, buf, index);
-        ERROR_CHECK(proc_var_err, ERROR_PROCESS_VAR_INIT);
+        LEX_ERROR(proc_var_err, ERROR_PROCESS_VAR_INIT, *index);
+    }
+
+    else if (isdigit(value[0]))
+    {
+        printf("entered digit\n");
+        double num = ConvertStrToNum(value);
+        LEX_ERROR(isnan(num), ERROR_CONVERT_STR_TO_NUM, *index);
+        lex_structs[*index].type = LT_NUM;
+        lex_structs[*index].num  = num;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "{") == 0)
+    {
+        printf("entered {\n");
+        lex_structs[*index].type = LT_STREAM_L_BRCKT;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "}") == 0)
+    {
+        printf("entered }\n");
+        lex_structs[*index].type = LT_STREAM_R_BRCKT;
+        (*index)++;
+    }
+
+    else if (strcmp(value, ";") == 0)
+    {
+        printf("entered ;\n");
+        lex_structs[*index].type = LT_ST_SEP;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "=") == 0)
+    {
+        printf("entered =\n");
+        lex_structs[*index].type = LT_EQ;
+        (*index)++;
+        (*buf)++;
+
+        char str[MAX_STR_SIZE] = { 0 };
+        READ_WHILE(str, (**buf != ';' && !isspace(**buf)));
+        LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+
+        int proc_var_val = ProcessArg(lex_structs, index, str);
+        LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
+    }
+
+    else if (strcmp(value, "if") == 0)
+    {
+        printf("entered if\n");
+        lex_structs[*index].type = LT_IF;
+        (*index)++;
+
+        int proc_exp_err = ProcessExpression(lex_structs, buf, index);
+        LEX_ERROR(proc_exp_err, ERROR_PROCESS_EXPRESSION, *index);
+    }
+
+    else if (strcmp(value, "else") == 0)
+    {
+        printf("entered else\n");
+        lex_structs[*index].type = LT_ELSE;
+        (*index)++;
     }
 
     else
-        return NULL;
+    {
+        printf("entered str\n");
+        lex_structs[*index].type = LT_STR;
+        lex_structs[*index].str  = strdup(value);
+        (*index)++;
+    }
 
     return SUCCESS;
 }
 
-
-int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
+int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index)
 {
-    ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(*buf        == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(buf         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(index       == NULL, ERROR_NULL_PTR);
+    printf("entered ProcessExpression\n");
 
+    LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(*buf        == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
+    
     SKIP_SPACE(*buf, ERROR_SYNTAX);
-
-//read var name
-    char str[MAX_STR_SIZE] = { 0 }; 
-    int i = 0;
-    while (**buf != '=' && !isspace(**buf))
-    {
-        str[i++] = *((*buf)++);
-        ERROR_CHECK(i == MAX_STR_SIZE - 1, ERROR_LONG_STR);
-        EOF_CHECK(*buf, ERROR_SYNTAX);
-    }
-    str[i] = '\0';
-
-    lex_structs[*index].type = LT_STR;
-    lex_structs[*index].str  = strdup(str);
+    LEX_ERROR(**buf != '(', ERROR_SYNTAX, *index);
+    lex_structs[*index].type = LT_EXP_L_BRCKT;
     (*index)++;
-
-    SKIP_SPACE(*buf, ERROR_SYNTAX);
-    ERROR_CHECK(**buf != '=', ERROR_SYNTAX);
     (*buf)++;
+    
     SKIP_SPACE(*buf, ERROR_SYNTAX);
-
-//read init val
-    i = 0;                                  
-    while (**buf != ';' && !isspace(**buf))
+    while (true)
     {
-        str[i++] = *((*buf)++);
-        ERROR_CHECK(i == MAX_STR_SIZE - 1, ERROR_LONG_STR);
-        EOF_CHECK(*buf, ERROR_SYNTAX);
+        char str[MAX_STR_SIZE] = { 0 };
+
+        READ_WHILE(str, **buf != '+' && **buf != '-' && **buf != ')' &&
+                        **buf != '*' && **buf != '/' && !isspace(**buf));
+        
+        int proc_var_val = ProcessArg(lex_structs, index, str);
+        LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
+
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+        if (**buf == ')')
+        {
+            lex_structs[*index].type = LT_EXP_R_BRCKT;
+            (*index)++;
+            (*buf)++;
+            break;
+        }
+
+        printf("is op\n");
+        switch (**buf)
+        {
+            case '+' :  lex_structs[*index].type      = LT_OP;
+                        lex_structs[*index].arithm_op = OP_ADD;
+                        (*index)++;
+                        break;
+                        
+
+            case '-' :  lex_structs[*index].type      = LT_OP;
+                        lex_structs[*index].arithm_op = OP_SUB;
+                        (*index)++;
+                        break;
+
+            case '*' :  lex_structs[*index].type      = LT_OP;
+                        lex_structs[*index].arithm_op = OP_MUL;
+                        (*index)++;
+                        break;
+
+            case '/' :  lex_structs[*index].type      = LT_OP;
+                        lex_structs[*index].arithm_op = OP_DIV;
+                        (*index)++;
+                        break;
+
+            default  :  LEX_ERROR(true, ERROR_SYNTAX, *index);
+        }
+        (*buf)++;
+
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+        LEX_ERROR(**buf == ')', ERROR_SYNTAX, *index);
     }
-    str[i] = '\0';
+
+    return SUCCESS;
+}
+
+int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str)
+{
+    LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(str         == NULL, ERROR_NULL_PTR, *index);
+
+    printf("entered process_arg\n");
 
     if (isdigit(str[0]))
     {
+        printf("entered digit\n");
         double num = ConvertStrToNum(str);
         ERROR_CHECK(isnan(num), ERROR_CONVERT_STR_TO_NUM);
         lex_structs[*index].type = LT_NUM;
         lex_structs[*index].num  = num;
         (*index)++;
     }
+
+    else if (str[0] == '\0')
+    {
+        printf("entered null\n");
+        lex_structs[*index].type = LT_NIL;
+        (*index)++;
+    }
     
     else
     {
+        printf("entered str\n");
         lex_structs[*index].type = LT_STR;
         lex_structs[*index].str  = strdup(str);
         (*index)++;
     }
 
+    return SUCCESS;
+}
+
+int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
+{
+    LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(*buf        == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
+
     SKIP_SPACE(*buf, ERROR_SYNTAX);
-    ERROR_CHECK(**buf != ';', ERROR_SYNTAX);
+
+//read var name
+    char str[MAX_STR_SIZE] = { 0 }; 
+
+    READ_WHILE(str, **buf != '=' && !isspace(**buf));
+    LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+    LEX_ERROR(isdigit(str[0]), ERROR_SYNTAX, *index);
+
+    lex_structs[*index].type = LT_STR;
+    lex_structs[*index].str  = strdup(str);
+    (*index)++;
+
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    LEX_ERROR(**buf != '=', ERROR_SYNTAX, *index);
     (*buf)++;
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+
+//read init val
+    READ_WHILE(str, **buf != ';' && !isspace(**buf));
+    LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+
+    int proc_var_val = ProcessArg(lex_structs, index, str);
+    LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
 
     return SUCCESS;
 }
 
-int ProcessFunction(LexStruct *lex_struct, char *value, char **buf)
+int ProcessFunction(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
 {
-    ERROR_CHECK(lex_struct == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(value      == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(*buf       == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(buf        == NULL, ERROR_NULL_PTR);
+    LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(value       == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(*buf        == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
+    LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
 
 
 

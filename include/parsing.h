@@ -39,17 +39,19 @@
             }
 
 
-#define LEX_SKIP_SPACE(buf)                                 \
-            while(isspace(*(buf)) || *(buf) == '\0')        \
+#define LEX_SKIP_SPACE(buf)                                  \
+            while(isspace(*(buf)) || *(buf) == '\0')         \
                 (buf)++;                                    
 
-#define LEX_ERROR(cond, buf_pos)                            \
-            do                                              \
-            {                                               \
-                SOFT_ASSERT(cond);                          \
-                printf("ERROR in symb %d\n", buf_pos);      \
-                if (cond)                                   \
-                    return buf_pos;                         \
+#define LEX_ERROR(cond, err, index)                          \
+            do                                               \
+            {                                                \
+                SOFT_ASSERT(cond);                           \
+                if (cond)                                    \
+                {                                            \
+                    printf("ERROR in structs[%d]\n", index); \
+                    return err;                              \
+                }                                            \
             } while(false)
 
 enum LexType
@@ -73,8 +75,15 @@ enum LexType
     
     LT_STR  = 13,
     
-    LT_L_BRCKT = 14,
-    LT_R_BRCKT = 15,
+    LT_EXP_L_BRCKT = 14,
+    LT_EXP_R_BRCKT = 15,
+
+    LT_STREAM_L_BRCKT = 16,
+    LT_STREAM_R_BRCKT = 17,
+
+    LT_ST_SEP = 18,
+
+    LT_END = 20,
 };
 
 
@@ -84,15 +93,15 @@ struct LangLexicalElem
     ArithmOp arithm_op = OP_PSN;
     num_t    num       = NUM_PSN;
     const char *str    = NULL;
-
-    unsigned int struct_ip = 0;
 };
 
 enum LexError
 {
-    ERROR_FULL_LEX_STRUCT  = 1,
-    ERROR_LONG_STR         = 2,
-    ERROR_PROCESS_VAR_INIT = 3,
+    ERROR_FULL_LEX_STRUCT    = 1,
+    ERROR_LONG_STR           = 2,
+    ERROR_PROCESS_VAR_INIT   = 3,
+    ERROR_PROCESS_EXPRESSION = 4,
+    ERROR_PROCESS_ARG        = 5,
 };
 
 typedef struct LangLexicalElem LexStruct;
@@ -103,11 +112,14 @@ const int MAX_STR_SIZE = 20;
 
 int InitializeLexStructs(LexStruct *lex_structs);
 
-LexStruct *LexicalAnalisis(char *buf);
+LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount);
 
 double ConvertStrToNum(const char *string);
-int ProcessLexArg(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
+int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
+int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index);
+int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index);
+int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str);
 
-
+int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len);
 
 #endif
