@@ -1,2 +1,2 @@
-{ ST { FUNC { "main" { PARAM  { VAR { "z" } { NIL }} { PARAM { VAR { "v" } { NIL }}}}}}
+{ ST { FUNC { "MAIN" { PARAM  { VAR { "z" } { NIL }} { PARAM { VAR { "v" } { NIL }}}}}}
 { ST { VAR { "y" } { 2 }}}}

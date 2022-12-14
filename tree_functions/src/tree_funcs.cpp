@@ -570,6 +570,7 @@ struct LangNode *ProcessTreeValue(char *value)
         
         new_struct->type = T_STR;
         new_struct->str  = strdup(value + 1);
+        ERROR_CHECK(new_struct->str == NULL, NULL);
     }
 
     else

@@ -1,6 +1,8 @@
 #ifndef LANGUAGE_H_INCLUDED
 #define LANGUAGE_H_INCLUDED
 
+
+#include <windows.h>
 /*
 #include "../cpu_functions/assembler/include/asm.h"
 #include "../cpu_functions/cpu/include/cpu.h"
@@ -9,30 +11,32 @@
 #include "../tree_functions/include/tree.h"
 #include "math.h"
 #include "common.h"
+#include "rus_trans.h"
+
 
 static const char *const  LOG_FILE_PATH = "io/log.txt";
 static const char *const CODE_FILE_PATH = "io/code.txt";
 
 enum NodeType
 {
-    T_NIL = 0,
-    T_ST  = 1,
-    T_VAR = 2,
+    T_NIL  = 0,
+    T_ST   = 1,
+    T_VAR  = 2,
 
-    T_IF  = 3,
-    T_ELSE = 4,
+    T_IF   = 3,
+    T_ELSE  = 4,
     T_WHILE = 5,
 
-    T_FUNC = 6,
-    T_RET  = 7,
-    T_CALL = 8,
+    T_FUNC  = 6,
+    T_RET   = 7,
+    T_CALL  = 8,
     T_PARAM = 9,
 
-    T_NUM  = 10,
-    T_EQ   = 11,
-    T_OP   = 12,
+    T_NUM   = 10,
+    T_EQ    = 11,
+    T_OP    = 12,
 
-    T_STR  = 13,
+    T_STR   = 13,
 };
 
 enum ArithmOp

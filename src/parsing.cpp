@@ -14,7 +14,18 @@
             str[i] = '\0';                                                      \
             printf("readed str: %s\n", str);                                    \
         } while (false)
-        
+
+#define LEX_STR(string)                                                         \
+        do                                                                      \
+        {                                                                       \
+            lex_structs[*index].type = LT_STR;                                  \
+            const char *str_cpy = RusTranslate(string);                         \
+            LEX_ERROR(str_cpy == NULL, ERROR_RUS_TRANSLATE, *index);            \
+            lex_structs[*index].str = strdup(str_cpy);                          \
+            LEX_ERROR(lex_structs[*index].str == NULL, ERROR_STRDUP, *index);   \
+            free((void *)str_cpy);                                              \
+            (*index)++;                                                         \
+        } while (false)
 
 int InitializeLexStructs(LexStruct *lex_structs)
 {
@@ -54,8 +65,27 @@ LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount)
     while ((*buf) != EOF)
     {
         char value[MAX_CMD_SIZE] = { 0 };
-        int read_val_err = ReadValue(value, &buf);
-        ERROR_CHECK(read_val_err, NULL);
+        int i = 0; 
+
+        while (true)                                                   
+        {
+            printf("buf: %s\n", buf);                                                       
+            value[i++] = *buf;  
+            printf("value[%d]: %c\n", i-1, value[i-1]);                                     
+            LEX_ERROR(i == MAX_CMD_SIZE - 1, NULL, index);       
+            EOF_CHECK(buf, NULL); 
+
+            buf++;   
+            if ((isspace(*buf) || (!isalpha(*buf) && !isdigit(*buf))) || 
+                                 (!isalpha(value[i-1]) && !isdigit(value[i-1])))
+                break;
+                                            
+        }  
+        value[i] = '\0';                                                      
+        printf("readed value: %s\n", value); 
+
+        // int read_val_err = ReadValue(value, &buf);
+        // ERROR_CHECK(read_val_err, NULL);
 
         int proc_arg_err = ProcessLexValue(lex_structs, value, &buf, &index);
         ERROR_CHECK(proc_arg_err, NULL);
@@ -115,10 +145,31 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
         (*index)++;
     }
 
+    else if (strcmp(value, "(") == 0)
+    {
+        printf("entered (\n");
+        lex_structs[*index].type = LT_EXP_L_BRCKT;
+        (*index)++;
+    }
+
+    else if (strcmp(value, ")") == 0)
+    {
+        printf("entered )\n");
+        lex_structs[*index].type = LT_EXP_R_BRCKT;
+        (*index)++;
+    }
+
     else if (strcmp(value, ";") == 0)
     {
         printf("entered ;\n");
         lex_structs[*index].type = LT_ST_SEP;
+        (*index)++;
+    }
+
+    else if (strcmp(value, ",") == 0)
+    {
+        printf("entered ;\n");
+        lex_structs[*index].type = LT_COMMA;
         (*index)++;
     }
 
@@ -129,6 +180,7 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
         (*index)++;
         (*buf)++;
 
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
         char str[MAX_STR_SIZE] = { 0 };
         READ_WHILE(str, (**buf != ';' && !isspace(**buf)));
         LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
@@ -154,12 +206,67 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
         (*index)++;
     }
 
+    else if (strcmp(value, "func") == 0)
+    {
+        printf("entered func\n");
+        lex_structs[*index].type = LT_FUNC;
+        (*index)++;
+
+        int proc_exp_err = ProcessFunction(lex_structs, buf, index);
+        LEX_ERROR(proc_exp_err, ERROR_PROCESS_FUNCTION, *index);
+    }
+
+    else if (strcmp(value, "return") == 0)
+    {
+        printf("entered return\n");
+        lex_structs[*index].type = LT_RET;
+        (*index)++;
+
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+        char str[MAX_STR_SIZE] = { 0 };
+        READ_WHILE(str, (**buf != ';' && !isspace(**buf)));
+        LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+
+        int proc_var_val = ProcessArg(lex_structs, index, str);
+        LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
+    }
+
+    else if (strcmp(value, "+") == 0)
+    {
+        printf("entered +\n");
+        lex_structs[*index].type = LT_OP;
+        lex_structs[*index].arithm_op = OP_ADD;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "-") == 0)
+    {
+        printf("entered -\n");
+        lex_structs[*index].type = LT_OP;
+        lex_structs[*index].arithm_op = OP_SUB;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "*") == 0)
+    {
+        printf("entered *\n");
+        lex_structs[*index].type = LT_OP;
+        lex_structs[*index].arithm_op = OP_MUL;
+        (*index)++;
+    }
+
+    else if (strcmp(value, "/") == 0)
+    {
+        printf("entered /\n");
+        lex_structs[*index].type = LT_OP;
+        lex_structs[*index].arithm_op = OP_DIV;
+        (*index)++;
+    }
+
     else
     {
         printf("entered str\n");
-        lex_structs[*index].type = LT_STR;
-        lex_structs[*index].str  = strdup(value);
-        (*index)++;
+        LEX_STR(value);
     }
 
     return SUCCESS;
@@ -263,9 +370,7 @@ int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str)
     else
     {
         printf("entered str\n");
-        lex_structs[*index].type = LT_STR;
-        lex_structs[*index].str  = strdup(str);
-        (*index)++;
+        LEX_STR(str);
     }
 
     return SUCCESS;
@@ -287,9 +392,7 @@ int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
     LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
     LEX_ERROR(isdigit(str[0]), ERROR_SYNTAX, *index);
 
-    lex_structs[*index].type = LT_STR;
-    lex_structs[*index].str  = strdup(str);
-    (*index)++;
+    LEX_STR(str);
 
     SKIP_SPACE(*buf, ERROR_SYNTAX);
     LEX_ERROR(**buf != '=', ERROR_SYNTAX, *index);
@@ -306,28 +409,65 @@ int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
     return SUCCESS;
 }
 
-int ProcessFunction(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
+int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index)
 {
     LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
-    LEX_ERROR(value       == NULL, ERROR_NULL_PTR, *index);
     LEX_ERROR(*buf        == NULL, ERROR_NULL_PTR, *index);
     LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
     LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
 
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    char str[MAX_STR_SIZE] = { 0 };
+    READ_WHILE(str, **buf != '(' && !isspace(**buf));
+    LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+    LEX_STR(str);
 
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    LEX_ERROR(**buf != '(', ERROR_SYNTAX, *index);
+    lex_structs[*index].type = LT_EXP_L_BRCKT;
+    (*index)++;
+    (*buf)++;
 
+    SKIP_SPACE(*buf, ERROR_SYNTAX);
+    while (**buf != ')')
+    {
+        printf("(func cycle) buf: %s\n", *buf);
+        if (**buf == ',')
+        {
+            lex_structs[*index].type = LT_COMMA;
+            (*index)++;
+            (*buf)++;
+        }
 
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+        READ_WHILE(str, !isspace(**buf));
+        LEX_ERROR(strcmp(str, "var") != 0, ERROR_SYNTAX, *index);
+        lex_structs[*index].type = LT_VAR;
+        (*index)++;
+
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+        READ_WHILE(str, !isspace(**buf) && **buf != ',' && **buf != ')');
+        LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+        
+        LEX_STR(str);
+
+        SKIP_SPACE(*buf, ERROR_SYNTAX);
+    }
+
+    lex_structs[*index].type = LT_EXP_R_BRCKT;
+    (*index)++;
+    (*buf)++;
 
     return SUCCESS;
 }
 
 
 /*
-struct TreeNode *ReadProgram(const char *str)
+struct TreeNode *ReadExpression(const char *str)
 {
     ERROR_CHECK(str == NULL, 0);
     
-    struct TreeNode *node = GetStatement(&str);
+    struct TreeNode *node = GetAdd(&str);
     ERROR_CHECK(*str != '\0', NULL);
 
     ERROR_CHECK(node == NULL, NULL);

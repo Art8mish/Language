@@ -1,11 +1,17 @@
-var x = 2.546;
-var y = 4.45;
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
 
-if (x - 4+y )
-{
-    var z = 6;
-}
-else
-{
-    x = y;
+    if  (x - 4 + 17.3)
+    {
+        var z = 6
+    }
+    else
+    {
+        υσι(20, urf);
+        x =     y;
+    }
+
+    return 142.33;
 }

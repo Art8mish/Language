@@ -34,10 +34,10 @@
             do                                                                \
             {                                                                 \
                 val->type      = copying_val->type;                           \
-                val->arithm_op  = copying_val->arithm_op;                     \
-                val->num = copying_val->num;                                  \
-                val->str = copying_val->str;                                  \
-            } while (false) 
+                val->arithm_op = copying_val->arithm_op;                      \
+                val->num       = copying_val->num;                            \
+                val->str       = copying_val->str;                            \
+            } while (false)
 
 #define FREE_TREE_NODE_VALUE(curr_node)                                  \
             do                                                           \
@@ -119,6 +119,7 @@ enum TreeError
     ERROR_TREE_DTOR              = 26,
     ERROR_PROCESS_TREE_VALUE     = 27,  
     ERROR_PRINT_TREE_VALUE       = 28,
+    ERROR_STRDUP                 = 29,
 };
 
 enum TreeInsertPath

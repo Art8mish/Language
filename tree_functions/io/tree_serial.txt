@@ -1,7 +1,7 @@
 
 { ST 
 	{ FUNC 
-		{ "main" 
+		{ "υσι" 
 			{ PARAM 
 				{ VAR 
 					{ "z" }

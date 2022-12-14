@@ -82,6 +82,7 @@ enum LexType
     LT_STREAM_R_BRCKT = 17,
 
     LT_ST_SEP = 18,
+    LT_COMMA  = 19,
 
     LT_END = 20,
 };
@@ -102,6 +103,8 @@ enum LexError
     ERROR_PROCESS_VAR_INIT   = 3,
     ERROR_PROCESS_EXPRESSION = 4,
     ERROR_PROCESS_ARG        = 5,
+    ERROR_PROCESS_FUNCTION   = 6,
+    ERROR_RUS_TRANSLATE      = 7,
 };
 
 typedef struct LangLexicalElem LexStruct;
@@ -118,6 +121,7 @@ double ConvertStrToNum(const char *string);
 int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
 int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index);
+int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str);
 
 int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len);

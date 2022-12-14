@@ -32,13 +32,14 @@ struct Tree *LangTreeDeserialize(const char *input_file_name)
     unsigned int structs_amount = 0;
     LexStruct *lex_structs = LexicalAnalisis(buf, &structs_amount);
     ERROR_CHECK(lex_structs == NULL, NULL);
-
+    printf("structs_amount = %d\n", structs_amount);
     int lex_dump_err = LexicalDump(lex_structs, buf_cpy, onegin_context->chars_amount);
     ERROR_CHECK(lex_dump_err, NULL);
    /*
     new_tree->root = ReadProgram(lex_structs);
     ERROR_CHECK(new_tree->root == NULL, NULL);*/
 
+    free(lex_structs);
     return new_tree;    
 }
 
@@ -112,10 +113,10 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
             case LT_STR   : fprintf(log_f, "[%d]: STR: %s\n", index, lex_structs[index].str);
                             break;
 
-            case LT_EXP_L_BRCKT : fprintf(log_f, "[%d]: (\n", index);
+            case LT_EXP_L_BRCKT    : fprintf(log_f, "[%d]: (\n", index);
                             break;
 
-            case LT_EXP_R_BRCKT : fprintf(log_f, "[%d]: )\n", index);
+            case LT_EXP_R_BRCKT    : fprintf(log_f, "[%d]: )\n", index);
                             break;
 
             case LT_STREAM_L_BRCKT : fprintf(log_f, "[%d]: {\n", index);
@@ -127,10 +128,13 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
             case LT_ST_SEP : fprintf(log_f, "[%d]: ;\n", index);
                             break;
 
-            case LT_END   : fprintf(log_f, "[%d]: END\n", index);
+            case LT_COMMA  : fprintf(log_f, "[%d]: ,\n", index);
                             break;
 
-            default       : fprintf(log_f, "[%d]: ERROR\n", index);
+            case LT_END    : fprintf(log_f, "[%d]: END\n", index);
+                            break;
+
+            default        : fprintf(log_f, "[%d]: ERROR\n", index);
                             break;
         }
 
