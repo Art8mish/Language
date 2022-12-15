@@ -60,6 +60,7 @@ struct LangNode
     num_t    num       = NUM_PSN;
     const char *str    = NULL;
 };
+typedef struct LangNode LangNode;
 
 struct LangContext
 {

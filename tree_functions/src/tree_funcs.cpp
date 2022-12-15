@@ -478,7 +478,7 @@ int ReadValue(char *value, char **buf)
     int symb_count = 0;
     int sscanf_ret = sscanf((*buf), " %s%n", value,  &symb_count);
     printf("value: %s (%d)\n", value, sscanf_ret);
-    //ERROR_CHECK(sscanf_ret != 2, ERROR_SYNTAX);
+    //ERROR_CHECK(sscanf_ret != 1, ERROR_SYNTAX);
 
     (*buf) += symb_count;
 

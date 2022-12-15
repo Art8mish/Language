@@ -10,8 +10,8 @@ func υσι (var zombie, var urf)
     }
     else
     {
-        υσι(20, urf);
-        x =     y;
+        υσι (20, urf);
+        x = y;
     }
 
     return 142.33;

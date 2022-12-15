@@ -142,6 +142,7 @@ struct TreeNode
     struct TreeNode *right  = NULL;
     struct TreeNode *parent = NULL;
 };
+typedef struct TreeNode Treenode;
 
 struct Tree
 {

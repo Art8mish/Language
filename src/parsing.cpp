@@ -27,6 +27,9 @@
             (*index)++;                                                         \
         } while (false)
 
+static int y = 1;
+static int x = y + 1;
+
 int InitializeLexStructs(LexStruct *lex_structs)
 {
     ERROR_CHECK(lex_structs == NULL, ERROR_NULL_PTR);
@@ -83,9 +86,6 @@ LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount)
         }  
         value[i] = '\0';                                                      
         printf("readed value: %s\n", value); 
-
-        // int read_val_err = ReadValue(value, &buf);
-        // ERROR_CHECK(read_val_err, NULL);
 
         int proc_arg_err = ProcessLexValue(lex_structs, value, &buf, &index);
         ERROR_CHECK(proc_arg_err, NULL);
@@ -462,240 +462,462 @@ int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index)
 }
 
 
-/*
-struct TreeNode *ReadExpression(const char *str)
+#define T_NCTOR(n_name, n_type)                                                     \
+            LangNode *lang_val = NULL;                                              \
+            CREATE_TREE_NODE_VALUE(lang_val, NULL);                                 \
+            lang_val->type = n_type;                                                \
+            Treenode *n_name = TreeNodeCtor(lang_val, NULL, NULL);                  \
+            LEX_ERROR(n_name == NULL, NULL, *index)
+
+#define STR_NCTOR(n_name, n_str)                                                    \
+            LangNode *lang_val = NULL;                                              \
+            CREATE_TREE_NODE_VALUE(lang_val, NULL);                                 \
+            lang_val->type = T_STR;                                                 \
+            lang_val->str  = n_str;                                                 \
+            Treenode *n_name = TreeNodeCtor(lang_val, NULL, NULL);                  \
+            LEX_ERROR(n_name == NULL, NULL, *index)
+
+#define TIE(parent_node, child_node, tie_type)                                      \
+            do {                                                                    \
+                int tie_err = TreeNodeTie(parent_node, child_node, tie_type);       \
+                LEX_ERROR(tie_err, NULL, *index);                                   \
+            } while (false)
+
+#define STRCT_T lex_structs[*index].type
+#define STRCT_OP lex_structs[*index].arithm_op
+
+TreeNode *ReadLexCode(const LexStruct *lex_structs)
 {
-    ERROR_CHECK(str == NULL, 0);
+    unsigned int index = 0; 
+    LEX_ERROR(lex_structs == NULL, NULL, index);
+
+    struct TreeNode *node = GetExternal(lex_structs, &index);
+    LEX_ERROR(lex_structs[index].type != LT_END, NULL, index);
+
+    return node;
+}
+
+TreeNode *GetExternal(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    TreeNode *st_node    = NULL;
+    TreeNode *extra_node = NULL;
+
+    bool first_cycle = true;
+    while (STRCT_T == LT_FUNC || STRCT_T == LT_VAR)
+    {
+        T_NCTOR(curr_st_node, T_ST);
+
+        if (STRCT_T == LT_FUNC)
+        {
+            index++;
+            TreeNode *func_node = GetFunc(lex_structs, index);
+            LEX_ERROR(func_node == NULL, NULL, *index);
+            
+            TIE(curr_st_node, func_node, TREE_TIE_LEFT);
+        }
+
+        else if (STRCT_T == LT_VAR)
+        {
+            index++;
+            TreeNode *var_node = GetVar(lex_structs, index);
+            LEX_ERROR(var_node == NULL, NULL, *index);
+            
+            TIE(curr_st_node, var_node, TREE_TIE_LEFT);
+        }
+
+        if (first_cycle)
+        {
+            st_node = curr_st_node;
+            extra_node = curr_st_node;
+            first_cycle = false;
+            continue;
+        }
+
+        TIE(extra_node, curr_st_node, TREE_TIE_RIGHT);
+        extra_node = curr_st_node;
+
+    }
+
+    return st_node;
+}
+
+TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    T_NCTOR(func_node, T_FUNC);
+
+    LEX_ERROR(STRCT_T != LT_STR, NULL, *index);
+    STR_NCTOR(func_name, lex_structs[*index].str);
+    (*index)++;
+
+    LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NULL, *index);
+    (*index)++;
+
+    TreeNode *extra_node = NULL;
+    bool first_cycle = true;
+    while (STRCT_T != LT_EXP_R_BRCKT)
+    {
+        if (!first_cycle)
+        {
+            LEX_ERROR(STRCT_T != LT_COMMA, NULL, *index);
+            (*index)++;
+        }
+
+        LEX_ERROR(STRCT_T != LT_VAR, NULL, *index);
+        T_NCTOR(param_node, T_PARAM);
+        (*index++);
+
+        T_NCTOR(var_node, T_VAR);
+        TIE(param_node, var_node, TREE_TIE_LEFT);
+
+        LEX_ERROR(STRCT_T != LT_STR, NULL, *index);
+        STR_NCTOR(var_name, lex_structs[*index].str);
+        (*index)++;
+        TIE(var_node, var_name, TREE_TIE_LEFT);
+
+        if (first_cycle)
+        {
+            TIE(func_name, param_node, TREE_TIE_LEFT);
+            extra_node = param_node;
+            first_cycle = false;
+            continue;
+        }
+
+        TIE(extra_node, param_node, TREE_TIE_RIGHT);
+        extra_node = param_node;
+    }
+
+    LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NULL, *index);
+    (*index)++;
     
-    struct TreeNode *node = GetAdd(&str);
-    ERROR_CHECK(*str != '\0', NULL);
+    LEX_ERROR(STRCT_T != LT_STREAM_L_BRCKT, NULL, *index);
+    TreeNode *st_node = GetStatementStream(lex_structs, index);
+    LEX_ERROR(st_node == NULL, NULL, *index);
 
-    ERROR_CHECK(node == NULL, NULL);
-    return node;
+    TIE(func_name, st_node, TREE_TIE_RIGHT);
+
+    return func_node;
 }
 
-struct TreeNode *GetAdd(const char **buf)
+TreeNode *GetVar(const LexStruct *lex_structs, unsigned int *index)
 {
-    SKIP_SPACE_STR(*buf);
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
 
-    struct TreeNode *node = GetMul(buf);
+    T_NCTOR(var_node, T_VAR);
 
-    while (**buf == '+' || **buf == '-')
+    LEX_ERROR(STRCT_T != LT_STR, NULL, *index);
+    STR_NCTOR(var_name, lex_structs[*index].str);
+    (*index)++;
+
+    TIE(var_node, var_name, TREE_TIE_LEFT);
+
+    TreeNode *val_node = GetExp(lex_structs, index);
+    LEX_ERROR(val_node == NULL, NULL, *index);
+
+    // LEX_ERROR(STRCT_T != LT_NUM && STRCT_T != LT_STR, NULL, *index);
+    // if (STRCT_T == LT_NUM)
+    // {
+    //     val_node->value->type = T_NUM;
+    //     val_node->value->num  = lex_structs[*index].num;  
+    // }
+
+    // else
+    // {
+    //     val_node->value->type = T_STR;
+    //     val_node->value->str  = lex_structs[*index].str;
+    // }
+    // (*index)++;
+
+    TIE(var_node, val_node, TREE_TIE_RIGHT);
+
+    LEX_ERROR(STRCT_T != LT_ST_SEP, NULL, *index);
+    (*index)++;
+
+    return var_node;
+}
+
+TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    T_NCTOR(st_node, T_ST);
+
+    LEX_ERROR(STRCT_T != LT_VAR   &&
+              STRCT_T != LT_IF    &&
+              STRCT_T != LT_WHILE &&
+              STRCT_T != LT_STR, NULL, *index);
+
+    if (STRCT_T == LT_VAR)
     {
-        int op = **buf;
-        (*buf)++;
-
-        struct TreeNode *node2 = GetMul(buf);
-
-        struct TreeNode *parent_node = NULL; 
-        if (op == '+')
-            parent_node = DiffNodeCtor(TYPE_OP, DiffOpCtor(ADD_OP), node, node2);
-        else
-            parent_node = DiffNodeCtor(TYPE_OP, DiffOpCtor(SUB_OP), node, node2);
-
-        node = parent_node;
+        (*index)++;
+        TreeNode *var_node = GetVar(lex_structs, index);
+        LEX_ERROR(var_node == NULL, NULL, *index);
+        
+        TIE(st_node, var_node, TREE_TIE_LEFT);
     }
 
-    SKIP_SPACE_STR(*buf);
-
-    ERROR_CHECK(node == NULL, NULL);
-    return node;
-}
-
-struct TreeNode *GetMul(const char **buf)
-{
-    SKIP_SPACE_STR(*buf);
-
-    struct TreeNode *node = GetPow(buf);
-
-    while (**buf == '*' || **buf == '/')
+    else if (STRCT_T == LT_IF)
     {
-        int op = **buf;
-        (*buf)++;
-
-        struct TreeNode *node2 = GetPow(buf);
-
-        struct TreeNode *parent_node = NULL; 
-        if (op == '*')
-            parent_node = DiffNodeCtor(TYPE_OP, DiffOpCtor(MUL_OP), node, node2);
-        else
-        {
-            ERROR_CHECK(node2->value->type_arg == TYPE_NUM && 
-                        node2->value->diff_arg->num - EPS <= 0  &&
-                        node2->value->diff_arg->num + EPS >= 0, NULL);
-            parent_node = DiffNodeCtor(TYPE_OP, DiffOpCtor(DIV_OP), node, node2);
-        }
-
-        node = parent_node;
+        (*index)++;
+        TreeNode *if_node = GetIf(lex_structs, index);
+        LEX_ERROR(if_node == NULL, NULL, *index);
+        
+        TIE(st_node, if_node, TREE_TIE_LEFT);
     }
 
-    SKIP_SPACE_STR(*buf);
-
-    ERROR_CHECK(node == NULL, NULL);
-    return node;
-}
-
-struct TreeNode *GetPow(const char **buf)
-{
-    SKIP_SPACE_STR(*buf);
-
-    struct TreeNode *node = GetUnarFunc(buf);
-
-    while (**buf == '^')
+    else if (STRCT_T == LT_WHILE)
     {
-        (*buf)++;
-        struct TreeNode *node2 = GetUnarFunc(buf);
-        struct TreeNode *parent_node = DiffNodeCtor(TYPE_OP, DiffOpCtor(POW_OP), node, node2); 
-
-        node = parent_node;
-    }
-
-    SKIP_SPACE_STR(*buf);
-
-    ERROR_CHECK(node == NULL, NULL);
-    return node;
-}
-
-struct TreeNode *GetUnarFunc(const char **buf)
-{
-    SKIP_SPACE_STR(*buf);
-
-    struct TreeNode *node = NULL;
-
-    if (**buf == 's' || **buf == 'c' || **buf == 't' || **buf == 'a' || **buf == 'l')
-    {
-        int symb_count = 0;
-        char op[MAX_ARG_LEN] = { 0 };
-        sscanf((*buf), "%[a-z] %n", op, &symb_count);                     
-        (*buf) += symb_count;
-
-        struct TreeNode *node2 = GetBrackets(buf);
-
-        if(strcmp(op, "sin") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(SIN_OP), NULL, node2);
-
-        else if(strcmp(op, "cos") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(COS_OP), NULL, node2);
-
-        else if(strcmp(op, "tg") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(TAN_OP), NULL, node2);
-
-        else if(strcmp(op, "arcsin") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(ASIN_OP), NULL, node2);
-
-        else if(strcmp(op, "arccos") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(ACOS_OP), NULL, node2);
-
-        else if(strcmp(op, "arctg") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(ATAN_OP), NULL, node2);
-
-        else if(strcmp(op, "sh") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(SINH_OP), NULL, node2);
-
-        else if(strcmp(op, "ch") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(COSH_OP), NULL, node2);
-
-        else if(strcmp(op, "th") == 0)
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(TANH_OP), NULL, node2);
-
-        else if(strcmp(op, "ln") == 0)
-        {
-            ERROR_CHECK(node2->value->type_arg == TYPE_NUM && 
-                        node2->value->diff_arg->num < EPS, NULL);
-            node = DiffNodeCtor(TYPE_OP, DiffOpCtor(LN_OP), NULL, node2);
-        }
+        (*index)++;
+        TreeNode *while_node = GetWhile(lex_structs, index);
+        LEX_ERROR(while_node == NULL, NULL, *index);
+        
+        TIE(st_node, while_node, TREE_TIE_LEFT);
     }
 
     else
-        node = GetBrackets(buf);
+    {
+        (*index)++;
+        TreeNode *str_node = GetStr(lex_structs, index);
+        LEX_ERROR(str_node == NULL, NULL, *index);
+        
+        TIE(st_node, str_node, TREE_TIE_LEFT);    
 
-    SKIP_SPACE_STR(*buf);
+        LEX_ERROR(STRCT_T != LT_ST_SEP, NULL, *index);
+        (*index)++;
+    }
 
-    ERROR_CHECK(node == NULL, NULL);
+    return st_node;
+}
+
+TreeNode *GetStatementStream(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    LEX_ERROR(STRCT_T != LT_STREAM_L_BRCKT, NULL, *index);
+    (*index)++;
+
+    TreeNode *ret_st_node = NULL;
+    TreeNode *extra_node  = NULL;
+    bool first_cycle = true;
+    while (STRCT_T != LT_STREAM_R_BRCKT)
+    {
+        TreeNode *st_node = GetStatement(lex_structs, index);
+        LEX_ERROR(st_node == NULL, NULL, *index);
+
+        if (first_cycle)
+        {
+            ret_st_node = st_node;
+            extra_node  = st_node;
+            first_cycle = false;
+            continue;
+        }
+
+        TIE(extra_node, st_node, TREE_TIE_RIGHT);
+        extra_node = st_node;
+    }
+    (*index)++;
+
+    return ret_st_node;
+}
+
+TreeNode *GetIf(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    T_NCTOR(if_node, T_IF);
+
+    LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NULL, *index);
+    (*index)++;
+
+    TreeNode *cond_node = GetExp(lex_structs, index);
+    LEX_ERROR(cond_node == NULL, NULL, *index);
+
+    LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NULL, *index);
+    (*index)++;
+
+    TIE(if_node, cond_node, TREE_TIE_LEFT);
+
+    LEX_ERROR(STRCT_T != LT_STREAM_L_BRCKT, NULL, *index);
+    TreeNode *if_st_node = GetStatementStream(lex_structs, index);
+    LEX_ERROR(if_st_node == NULL, NULL, *index);
+
+    if (STRCT_T != LT_ELSE)
+    {
+        TIE(if_node, if_st_node, TREE_TIE_RIGHT);
+        return if_node;
+    }
+
+    T_NCTOR(else_node, T_ELSE);
+    (*index)++;
+    TIE(else_node, if_st_node, TREE_TIE_LEFT);
+
+    LEX_ERROR(STRCT_T != LT_STREAM_L_BRCKT, NULL, *index);
+    TreeNode *else_st_node = GetStatementStream(lex_structs, index);
+    LEX_ERROR(else_st_node == NULL, NULL, *index);
+
+    TIE(else_node, else_st_node, TREE_TIE_RIGHT);
+    TIE(if_node, else_node, TREE_TIE_RIGHT);
+
+    return if_node;
+}
+
+TreeNode *GetWhile(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    T_NCTOR(while_node, T_IF);
+
+    LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NULL, *index);
+    (*index)++;
+
+    TreeNode *cond_node = GetExp(lex_structs, index);
+    LEX_ERROR(cond_node == NULL, NULL, *index);
+
+    LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NULL, *index);
+    (*index)++;
+
+    TIE(while_node, cond_node, TREE_TIE_LEFT);
+
+    LEX_ERROR(STRCT_T != LT_STREAM_L_BRCKT, NULL, *index);
+    TreeNode *while_st_node = GetStatementStream(lex_structs, index);
+    LEX_ERROR(while_st_node == NULL, NULL, *index);
+
+    TIE(while_node, while_st_node, TREE_TIE_RIGHT);
+
+    return while_node;
+}
+
+TreeNode *GetExp(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+    
+    struct TreeNode *exp_node = GetAdd(lex_structs, index);
+    LEX_ERROR(exp_node == NULL, NULL, *index);
+
+    return exp_node;
+}
+
+TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    struct TreeNode *node = GetMul(lex_structs, index);
+    LEX_ERROR(node == NULL, NULL, *index);
+
+    while (STRCT_T == T_OP && (STRCT_OP == OP_ADD || STRCT_OP == OP_SUB))
+    {
+        ArithmOp op = STRCT_OP;
+        (*index)++;
+
+        struct TreeNode *scnd_node = GetMul(lex_structs, index);
+        LEX_ERROR(scnd_node == NULL, NULL, *index);
+
+        T_NCTOR(parent_node, T_OP);
+        parent_node->value->arithm_op = op;
+
+        TIE(parent_node,      node, TREE_TIE_LEFT);
+        TIE(parent_node, scnd_node, TREE_TIE_RIGHT);
+
+        node = parent_node;
+    }
+
     return node;
 }
 
-struct TreeNode *GetBrackets(const char **buf)
+TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index)
 {
-    SKIP_SPACE_STR(*buf);
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    struct TreeNode *node = GetBrackets(lex_structs, index);
+    LEX_ERROR(node == NULL, NULL, *index);
+
+    while (STRCT_T == T_OP && (STRCT_OP == OP_MUL || STRCT_OP == OP_DIV))
+    {
+        ArithmOp op = STRCT_OP;
+        (*index)++;
+
+        struct TreeNode *scnd_node = GetBrackets(lex_structs, index);
+        LEX_ERROR(scnd_node == NULL, NULL, *index);
+
+        T_NCTOR(parent_node, T_OP);
+        parent_node->value->arithm_op = op;
+
+        TIE(parent_node,      node, TREE_TIE_LEFT);
+        TIE(parent_node, scnd_node, TREE_TIE_RIGHT);
+
+        node = parent_node;
+    }
+
+    return node;
+}
+
+
+TreeNode *GetBrackets(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
 
     struct TreeNode *node = NULL;
 
-    if (**buf == '(')
+    if (STRCT_T == LT_EXP_L_BRCKT)
     {
-        (*buf)++;
+        (*index)++;
 
-        node = GetAdd(buf);
+        node = GetAdd(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
 
-        ERROR_CHECK((**buf) != ')', 0);
-        (*buf)++;
+        LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NULL, *index);
+        (*index)++;
     }
 
     else
-        node = GetArg(buf);
+    {
+        node = GetArg(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+    }
 
-    SKIP_SPACE_STR(*buf);
-
-    ERROR_CHECK(node == NULL, NULL);
     return node;
 }
 
-struct TreeNode *GetArg(const char **buf)
+TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index)
 {
-    SKIP_SPACE_STR(*buf);
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
 
-    tree_elem_t val = NULL;
-    CREATE_TREE_NODE_VALUE(val, NULL);
+    T_NCTOR(node, T_NIL);
 
-    struct TreeNode *new_node = TreeNodeCtor(val, NULL, NULL);
-    const char *s_old = *buf;
-    if ((**buf >= '0' && **buf <= '9') || **buf == 'p' || **buf == 'e')
+    int i_old = *index;
+    if (STRCT_T == LT_NUM)
     {
-        new_node->value->type_arg = TYPE_NUM;
-        diff_num_t num = DIFF_NUM_PSN;
-
-        if (**buf == 'p')
-        {
-            (*buf)++;
-            ERROR_CHECK(**buf != 'i', NULL);
-            num = PI;
-            (*buf)++;
-        }
-
-        else if (**buf == 'e')
-        {
-            num = EXP;
-            (*buf)++;
-        }
-
-        else
-        {
-            size_t num_length = ConvertStrToNum(buf, &num);
-            ERROR_CHECK(num_length == 0, TREE_VAL_PSN);
-        }
-
-        new_node->value->diff_arg->num = num;
+        node->value->type = T_NUM;
+        node->value->num  = lex_structs[*index].num;
     }
     
-    else if (**buf >= 'a' && **buf <= 'z' && 
-             **buf != 's' && **buf != 'c' && **buf != 't' &&
-             **buf != 'a' && **buf != 'l' && **buf != 'p' &&
-             **buf != 'e')
+    else if (STRCT_T == LT_STR)
     {
-        new_node->value->type_arg = TYPE_VAR;
-
-        new_node->value->diff_arg->var = **buf;
-
-        (*buf)++;
+        node->value->type = T_STR;
+        node->value->str  = lex_structs[*index].str;
     }
 
-    ERROR_CHECK(*buf == s_old, TREE_VAL_PSN);
+    (*index)++;
 
-    SKIP_SPACE_STR(*buf);
+    LEX_ERROR(i_old == *index, NULL, *index);
 
-    ERROR_CHECK(new_node == NULL, NULL);
-    return new_node;
-}*/
+    return node;
+}
 
 double ConvertStrToNum(const char *string)
 {
