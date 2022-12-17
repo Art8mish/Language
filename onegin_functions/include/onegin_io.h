@@ -12,7 +12,7 @@
 //---------------------------------------------------------------------------
 
 struct WorkingField *CreateWorkingField(const char *input_file_name);
-
+int DestructWorkingField(struct WorkingField *field);
 
 //---------------------------------------------------------------------------
 //! Reading file by filling buffer

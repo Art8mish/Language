@@ -31,15 +31,21 @@ struct Tree *LangTreeDeserialize(const char *input_file_name)
 
     unsigned int structs_amount = 0;
     LexStruct *lex_structs = LexicalAnalisis(buf, &structs_amount);
-    ERROR_CHECK(lex_structs == NULL, NULL);
+    SAFE_ERROR_CHECK(lex_structs == NULL, DestructWorkingField(onegin_context);, NULL);
+
     printf("structs_amount = %d\n", structs_amount);
+
     int lex_dump_err = LexicalDump(lex_structs, buf_cpy, onegin_context->chars_amount);
-    ERROR_CHECK(lex_dump_err, NULL);
+    SAFE_ERROR_CHECK(lex_dump_err, DestructWorkingField(onegin_context); 
+                                   free(lex_structs);, NULL);
    /*
     new_tree->root = ReadProgram(lex_structs);
     ERROR_CHECK(new_tree->root == NULL, NULL);*/
 
+    int ongn_dtor_err = DestructWorkingField(onegin_context);
+    SAFE_ERROR_CHECK(ongn_dtor_err, free(lex_structs);, NULL);
     free(lex_structs);
+
     return new_tree;    
 }
 

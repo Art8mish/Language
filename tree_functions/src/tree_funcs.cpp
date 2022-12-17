@@ -382,7 +382,10 @@ struct Tree *TreeDeserialize(const char *input_file_name)
     char *buf = onegin_context->chars_buffer;
 
     int read_node_err = DeserializeNode(new_tree, new_tree->root, &buf);
-    ERROR_CHECK(read_node_err, NULL);
+    SAFE_ERROR_CHECK(read_node_err, DestructWorkingField(onegin_context);, NULL);
+
+    int ongn_dtor_err = DestructWorkingField(onegin_context);
+    ERROR_CHECK(ongn_dtor_err, NULL);
 
     return new_tree;    
 }
@@ -529,7 +532,7 @@ struct LangNode *ProcessTreeValue(char *value)
     else if (isdigit(value[0]))
     {
         double num = ConvertStrToNum(value);
-        ERROR_CHECK(isnan(num), NULL);
+        SAFE_ERROR_CHECK(isnan(num), free(new_struct);, NULL);
 
         new_struct->type = T_NUM;
         new_struct->num  = num;
@@ -565,16 +568,19 @@ struct LangNode *ProcessTreeValue(char *value)
     else if (value[0] == '"')
     {
         size_t val_len = strlen(value);
-        ERROR_CHECK(value[val_len - 1] != '"', NULL);
+        SAFE_ERROR_CHECK(value[val_len - 1] != '"', free(new_struct);, NULL);
         value[val_len - 1] = '\0';
         
         new_struct->type = T_STR;
         new_struct->str  = strdup(value + 1);
-        ERROR_CHECK(new_struct->str == NULL, NULL);
+        SAFE_ERROR_CHECK(new_struct->str == NULL, free(new_struct);, NULL);
     }
 
     else
+    {
+        free(new_struct);
         return NULL;
+    }
 
     return new_struct;
 }

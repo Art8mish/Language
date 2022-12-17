@@ -13,8 +13,8 @@
             do                                                                    \
             {                                                                     \
                 if (condition)                                                    \
-                    printf("Error in %s; file: %s; num of line: %d \n",           \
-                           #condition, __FILE__, __LINE__);                       \
+                    printf("Error in %s = %d; file: %s; num of line: %d \n",      \
+                           #condition, condition, __FILE__, __LINE__);            \
             } while(false)
 
 #else
@@ -28,6 +28,18 @@
                 if (cond)                                   \
                     return error;                           \
             } while(false)
+    
+#define SAFE_ERROR_CHECK(cond, code, error)                 \
+            do                                              \
+            {                                               \
+                SOFT_ASSERT(cond);                          \
+                if (cond)                                   \
+                {                                           \
+                    code                                    \
+                    return error;                           \
+                }                                           \
+            } while (false)
+
 
 #define FILE_ERROR_CHECK(cond, error, closing_file)         \
             do                                              \

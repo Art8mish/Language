@@ -24,6 +24,17 @@ struct WorkingField *CreateWorkingField(const char *input_file_name)
     return field;
 }
 
+int DestructWorkingField(struct WorkingField *field)
+{
+    Assert(field != NULL, POINTER_IS_NULL);
+
+    free(field->chars_buffer);
+    free(field->pointers_buffer);
+    free(field);
+
+    return EXIT_SUCCESS;
+}
+
 
 int ReadFile(const char *input_file_name, char *chars_buffer, size_t chars_amount, char **pointers_buffer)
 {

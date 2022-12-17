@@ -28,6 +28,18 @@
                 if (cond)                                   \
                     return error;                           \
             } while(false)
+    
+#define SAFE_ERROR_CHECK(cond, code, error)                 \
+            do                                              \
+            {                                               \
+                SOFT_ASSERT(cond);                          \
+                if (cond)                                   \
+                {                                           \
+                    code                                    \
+                    return error;                           \
+                }
+            } while(false)
+
 
 #define FILE_ERROR_CHECK(cond, error, closing_file)         \
             do                                              \

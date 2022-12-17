@@ -54,6 +54,18 @@
                 }                                            \
             } while(false)
 
+#define SAFE_LEX_ERROR(cond, code, err, index)               \
+            do                                               \
+            {                                                \
+                SOFT_ASSERT(cond);                           \
+                if (cond)                                    \
+                {                                            \
+                    printf("ERROR in structs[%d]\n", index); \
+                    code                                     \
+                    return err;                              \
+                }                                            \
+            } while(false)
+
 enum LexType
 {
     LT_NIL = 0,
@@ -87,13 +99,14 @@ enum LexType
     LT_END = 20,
 };
 
-
 struct LangLexicalElem
 {
     LexType  type      = LT_NIL;
     ArithmOp arithm_op = OP_PSN;
     num_t    num       = NUM_PSN;
     const char *str    = NULL;
+
+    bool func_name = false;
 };
 
 enum LexError
@@ -109,15 +122,19 @@ enum LexError
 
 typedef struct LangLexicalElem LexStruct;
 
-const int MAX_CODE_LENGTH = 1000;
+const int MAX_CODE_LENGTH  = 1000;
+const int MAX_FUNCS_AMOUNT = 100;
 const int MAX_CMD_SIZE = 25;
 const int MAX_STR_SIZE = 20;
 
-int InitializeLexStructs(LexStruct *lex_structs);
+int LexStructsInit(LexStruct *lex_structs);
+int LexStructDtor(LexStruct *lex_structs, unsigned int struct_amount);
 
 LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount);
 
 double ConvertStrToNum(const char *string);
+const char **FindFuncNames(const LexStruct *lex_structs, unsigned int *func_amount);
+
 int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
 int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index);
@@ -125,5 +142,22 @@ int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str);
 
 int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len);
+
+TreeNode *ReadLexCode(const LexStruct *lex_structs);
+TreeNode *GetExternal(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetVar(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetStatementStream(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetIf(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetWhile(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetStr(const LexStruct *lex_structs, unsigned int *index);
+
+TreeNode *GetExp(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetBrackets(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index);
+TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index);
 
 #endif
