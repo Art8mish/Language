@@ -15,7 +15,7 @@ int TreeDtor(struct Tree *tree)
 {
     ERROR_CHECK(tree == NULL, ERROR_NULL_PTR);
 
-    int node_dtor_err = TreeNodeDtor(tree->root);
+    int node_dtor_err = TreeNodeDtor(&tree->root);
     ERROR_CHECK(node_dtor_err, ERROR_TREE_NODE_DTOR);
 
     free(tree);
@@ -23,25 +23,28 @@ int TreeDtor(struct Tree *tree)
     return SUCCESS;
 }
 
-int TreeNodeDtor(struct TreeNode *curr_node)
+int TreeNodeDtor(struct TreeNode **curr_node)
 {
-    if (curr_node == NULL)
+    ERROR_CHECK(curr_node == NULL, ERROR_NULL_PTR);
+
+    if (*curr_node == NULL)
         return SUCCESS;
 
-    if (curr_node->left != NULL)
+    if ((*curr_node)->left != NULL)
     {
-        int node_dtor_err = TreeNodeDtor(curr_node->left);
+        int node_dtor_err = TreeNodeDtor(&(*curr_node)->left);
         ERROR_CHECK(node_dtor_err, ERROR_TREE_NODE_DTOR);
     }
 
-    if (curr_node->right != NULL)
+    if ((*curr_node)->right != NULL)
     {
-        int node_dtor_err = TreeNodeDtor(curr_node->right);
+        int node_dtor_err = TreeNodeDtor(&(*curr_node)->right);
         ERROR_CHECK(node_dtor_err, ERROR_TREE_NODE_DTOR);
     }
 
-    FREE_TREE_NODE_VALUE(curr_node);
-    free(curr_node);
+    FREE_TREE_NODE_VALUE((*curr_node));
+    free(*curr_node);
+    *curr_node = NULL;
 
     return SUCCESS;
 }
@@ -88,7 +91,7 @@ struct TreeNode *TreeNodeCopy(struct TreeNode *curr_node)
     }
 
     tree_elem_t val = NULL;
-    CREATE_TREE_NODE_VALUE(val, NULL);
+    CREATE_TREE_NODE_VALUE(val, ;, NULL);
     COPY_TREE_VAl(val, curr_node->value);
 
     struct TreeNode *new_node = TreeNodeCtor(val, left_node, right_node);
@@ -108,7 +111,7 @@ int TreeNodeTie(struct TreeNode *parent_node,
     {
         case TREE_TIE_LEFT  : 
             {
-                tree_node_dtor_err = TreeNodeDtor(parent_node->left);
+                tree_node_dtor_err = TreeNodeDtor(&parent_node->left);
                 ERROR_CHECK(tree_node_dtor_err, ERROR_TREE_NODE_DTOR);
 
                 parent_node->left = curr_node;
@@ -118,7 +121,7 @@ int TreeNodeTie(struct TreeNode *parent_node,
 
         case TREE_TIE_RIGHT : 
             {
-                tree_node_dtor_err = TreeNodeDtor(parent_node->right);
+                tree_node_dtor_err = TreeNodeDtor(&parent_node->right);
                 ERROR_CHECK(tree_node_dtor_err, ERROR_TREE_NODE_DTOR);
 
                 parent_node->right = curr_node;

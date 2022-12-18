@@ -18,6 +18,8 @@ int main(void)
     struct Tree *tree = LangTreeDeserialize(CODE_FILE_PATH);
     ERROR_CHECK(tree == NULL, 1);
 
+    TREEDUMP(tree, "blyazdec");
+
     int dtor_err = TreeDtor(tree);
     ERROR_CHECK(dtor_err, 3); 
 

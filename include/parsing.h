@@ -143,21 +143,21 @@ int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str);
 
 int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len);
 
-TreeNode *ReadLexCode(const LexStruct *lex_structs);
-TreeNode *GetExternal(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetVar(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetStatementStream(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetIf(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetWhile(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetStr(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *ReadLexCode(const LexStruct *lex_structs);
+struct TreeNode *GetExternal(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetVar(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetStatementStream(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetIf(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetWhile(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetStr(const LexStruct *lex_structs, unsigned int *index);
 
-TreeNode *GetExp(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetBrackets(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index);
-TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetExp(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetBrackets(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index);
 
 #endif

@@ -5,12 +5,12 @@ func υσι (var zombie, var urf)
 
     if  (x - 4 + 17.3)
     {
-        var z = 6
+        var z = 6;
     }
     else
     {
-        υσι (20, urf);
-        x =     y;
+        υσι ((20 - x) * 6, urf);
+        x = y - 7 + 9;
     }
 
     return 142.33;

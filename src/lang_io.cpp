@@ -38,9 +38,12 @@ struct Tree *LangTreeDeserialize(const char *input_file_name)
     int lex_dump_err = LexicalDump(lex_structs, buf_cpy, onegin_context->chars_amount);
     SAFE_ERROR_CHECK(lex_dump_err, DestructWorkingField(onegin_context); 
                                    free(lex_structs);, NULL);
-   /*
-    new_tree->root = ReadProgram(lex_structs);
-    ERROR_CHECK(new_tree->root == NULL, NULL);*/
+   
+    printf("start readlexcode...\n");
+    new_tree->root = ReadLexCode(lex_structs);
+    SAFE_ERROR_CHECK(new_tree->root == NULL, DestructWorkingField(onegin_context); 
+                                             free(lex_structs);, NULL);
+    printf("end readlexcode...\n");
 
     int ongn_dtor_err = DestructWorkingField(onegin_context);
     SAFE_ERROR_CHECK(ongn_dtor_err, free(lex_structs);, NULL);
@@ -116,7 +119,8 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
             case LT_OP    : fprintf(log_f, "[%d]: OP: %d\n", index, lex_structs[index].arithm_op);
                             break;
 
-            case LT_STR   : fprintf(log_f, "[%d]: STR: %s\n", index, lex_structs[index].str);
+            case LT_STR   : fprintf(log_f, "[%d]: STR: %s (func_name: %d)\n", 
+                                    index, lex_structs[index].str, lex_structs[index].func_name);
                             break;
 
             case LT_EXP_L_BRCKT    : fprintf(log_f, "[%d]: (\n", index);

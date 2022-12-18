@@ -6,12 +6,12 @@ func υσι (var zombie, var urf)
 
     if  (x - 4 + 17.3)
     {
-        var z = 6
+        var z = 6;
     }
     else
     {
-        υσι (20, urf);
-        x = y;
+        υσι (20 -x * 6, urf);
+        x = y - 7 + 9;
     }
 
     return 142.33;
@@ -40,26 +40,26 @@ func υσι (var zombie, var urf)
 
 lex_structs: 
 [0]: FUNC
-[1]: STR: khuyj
+[1]: STR: khuyj (func_name: 1)
 [2]: (
 [3]: VAR
-[4]: STR: zombie
+[4]: STR: zombie (func_name: 0)
 [5]: ,
 [6]: VAR
-[7]: STR: urf
+[7]: STR: urf (func_name: 0)
 [8]: )
 [9]: {
 [10]: VAR
-[11]: STR: x
+[11]: STR: x (func_name: 0)
 [12]: NUM: 2.546
 [13]: ;
 [14]: VAR
-[15]: STR: y
+[15]: STR: y (func_name: 0)
 [16]: NUM: 4.45
 [17]: ;
 [18]: IF
 [19]: (
-[20]: STR: x
+[20]: STR: x (func_name: 0)
 [21]: OP: 2
 [22]: NUM: 4
 [23]: OP: 1
@@ -67,24 +67,1274 @@ lex_structs:
 [25]: )
 [26]: {
 [27]: VAR
-[28]: STR: z
+[28]: STR: z (func_name: 0)
 [29]: NUM: 6
-[30]: }
-[31]: ELSE
-[32]: {
-[33]: STR: khuyj
-[34]: (
-[35]: NUM: 20
-[36]: ,
-[37]: STR: urf
-[38]: )
-[39]: ;
-[40]: STR: x
-[41]: EQ
-[42]: STR: y
-[43]: ;
-[44]: }
-[45]: RET
-[46]: NUM: 142.33
-[47]: ;
-[48]: }
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: ,
+[38]: STR: urf (func_name: 0)
+[39]: )
+[40]: ;
+[41]: STR: x (func_name: 0)
+[42]: EQ
+[43]: STR: y (func_name: 0)
+[44]: OP: 2
+[45]: NUM: 7
+[46]: OP: 1
+[47]: NUM: 9
+[48]: ;
+[49]: }
+[50]: RET
+[51]: NUM: 142.33
+[52]: ;
+[53]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι (20 - x * 6, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: NUM: 20
+[37]: OP: 2
+[38]: STR: x (func_name: 0)
+[39]: OP: 3
+[40]: NUM: 6
+[41]: ,
+[42]: STR: urf (func_name: 0)
+[43]: )
+[44]: ;
+[45]: STR: x (func_name: 0)
+[46]: EQ
+[47]: STR: y (func_name: 0)
+[48]: OP: 2
+[49]: NUM: 7
+[50]: OP: 1
+[51]: NUM: 9
+[52]: ;
+[53]: }
+[54]: RET
+[55]: NUM: 142.33
+[56]: ;
+[57]: }
+buf: 
+func υσι (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (x - 4 + 17.3)
+    {
+        var z = 6;
+    }
+    else
+    {
+        υσι ((20 - x) * 6, urf);
+        x = y - 7 + 9;
+    }
+
+    return 142.33;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: NUM: 2.546
+[13]: ;
+[14]: VAR
+[15]: STR: y (func_name: 0)
+[16]: NUM: 4.45
+[17]: ;
+[18]: IF
+[19]: (
+[20]: STR: x (func_name: 0)
+[21]: OP: 2
+[22]: NUM: 4
+[23]: OP: 1
+[24]: NUM: 17.3
+[25]: )
+[26]: {
+[27]: VAR
+[28]: STR: z (func_name: 0)
+[29]: NUM: 6
+[30]: ;
+[31]: }
+[32]: ELSE
+[33]: {
+[34]: STR: khuyj (func_name: 0)
+[35]: (
+[36]: (
+[37]: NUM: 20
+[38]: OP: 2
+[39]: STR: x (func_name: 0)
+[40]: )
+[41]: OP: 3
+[42]: NUM: 6
+[43]: ,
+[44]: STR: urf (func_name: 0)
+[45]: )
+[46]: ;
+[47]: STR: x (func_name: 0)
+[48]: EQ
+[49]: STR: y (func_name: 0)
+[50]: OP: 2
+[51]: NUM: 7
+[52]: OP: 1
+[53]: NUM: 9
+[54]: ;
+[55]: }
+[56]: RET
+[57]: NUM: 142.33
+[58]: ;
+[59]: }

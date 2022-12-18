@@ -37,7 +37,7 @@
                 {                                           \
                     code                                    \
                     return error;                           \
-                }
+                }                                           \
             } while(false)
 
 

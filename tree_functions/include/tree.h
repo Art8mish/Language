@@ -12,11 +12,11 @@
 #include "../../onegin_functions/include/onegin_libraries.h"
 #include "common.h"
 
-#define CREATE_TREE_NODE_VALUE(val, err)                                                             \
+#define CREATE_TREE_NODE_VALUE(val, code, err)                                                             \
             do                                                                                       \
             {                                                                                        \
                 val = (struct LangNode *) calloc(1, sizeof(struct LangNode));                        \
-                ERROR_CHECK((val) == NULL, err);                                                     \
+                SAFE_ERROR_CHECK((val) == NULL, code, err);                                                     \
                 INIT_TREE_VALUE(val, err);                                                           \
             } while (false)
 
@@ -142,7 +142,8 @@ struct TreeNode
     struct TreeNode *right  = NULL;
     struct TreeNode *parent = NULL;
 };
-typedef struct TreeNode Treenode;
+
+typedef struct TreeNode TreeNode;
 
 struct Tree
 {
@@ -154,7 +155,7 @@ struct Tree
 struct Tree *TreeCtor(void);
 int TreeDtor(struct Tree *tree);
 
-int TreeNodeDtor(struct TreeNode *curr_node);
+int TreeNodeDtor(struct TreeNode **curr_node);
 struct TreeNode *TreeNodeCtor(tree_elem_t arg, struct TreeNode *left_node, struct TreeNode *right_node);
 
 struct TreeNode *TreeNodeCopy(struct TreeNode *curr_node);
