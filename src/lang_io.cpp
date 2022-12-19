@@ -98,7 +98,10 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
             case LT_WHILE : fprintf(log_f, "[%d]: WHILE\n", index);
                             break;
             
-            case LT_FUNC  : fprintf(log_f, "[%d]: FUNC\n", index);
+            case LT_TYPE_FUNC  : fprintf(log_f, "[%d]: VAR_FUNC\n", index);
+                            break;
+            
+            case LT_VOID_FUNC : fprintf(log_f, "[%d]: VOID_FUNC\n", index);
                             break;
 
             case LT_RET   : fprintf(log_f, "[%d]: RET\n", index);
@@ -117,6 +120,12 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
                             break;
 
             case LT_OP    : fprintf(log_f, "[%d]: OP: %d\n", index, lex_structs[index].arithm_op);
+                            break;
+
+            case LT_IN    : fprintf(log_f, "[%d]: IN\n", index);
+                            break;
+
+            case LT_OUT   : fprintf(log_f, "[%d]: OUT\n", index);
                             break;
 
             case LT_STR   : fprintf(log_f, "[%d]: STR: %s (func_name: %d)\n", 
@@ -153,6 +162,183 @@ int LexicalDump(LexStruct *lex_structs, char *buf, int buf_len)
 
     int fclose_err = fclose(log_f);
     ERROR_CHECK(fclose_err, ERROR_CLOSING_FILE);
+
+    return SUCCESS;
+}
+
+
+#define NTYPE(node) node->value->type
+#define NSTR(node) node->value->str
+#define NNUM(node) node->value->num
+#define NOP(node) node->value->arithm_op
+
+
+int GenerateLangCode(struct Tree *tree)
+{
+    ERROR_CHECK(tree       == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(tree->root == NULL, ERROR_NULL_PTR);
+
+    FILE *code_f = fopen(CODE_OUT_FILE_PATH, "w");
+    ERROR_CHECK(code_f == NULL, ERROR_OPENING_FILE);
+
+    SAFE_ERROR_CHECK(tree->root->value->type != T_ST, fclose(code_f);, ERROR_SYNTAX);
+
+    int print_lnode_err = PrintLangNode(code_f, tree->root);
+    ERROR_CHECK(print_lnode_err, ERROR_PRINT_LANG_NODE);
+
+    int fclose_err = fclose(code_f);
+    ERROR_CHECK(fclose_err, ERROR_CLOSING_FILE);
+
+    return SUCCESS;
+}
+
+int PrintLangNode(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    if (node == NULL)
+        return SUCCESS;
+    
+
+    int err = PrintLangNode(code_f, node->left);
+    ERROR_CHECK(err, ERROR_PRINT_LANG_NODE);
+
+        err = PrintLangNode(code_f, node->right);
+    ERROR_CHECK(err, ERROR_PRINT_LANG_NODE);
+    
+
+    return SUCCESS;
+}
+
+int PrintExtSt(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    if (node == NULL)
+        return SUCCESS;
+    ERROR_CHECK(node->left == NULL, ERROR_SYNTAX);
+
+    int err = 0;
+    switch (NTYPE(node->left))
+    {
+        case T_VAR  : err = PrintVar(code_f, node->left);
+                      ERROR_CHECK(err, ERROR_PRINT_EXT_ST);
+                      break;
+
+        case T_FUNC : err = PrintFunc(code_f, node->left);
+                      ERROR_CHECK(err, ERROR_PRINT_EXT_ST);
+                      break;
+
+        default     : return ERROR_SYNTAX;
+        
+    }
+
+    int pr_st_err = PrintExtSt(code_f, node->right);
+    ERROR_CHECK(pr_st_err, ERROR_PRINT_EXT_ST);
+
+    return SUCCESS;
+}
+
+int PrintVar(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    fprintf(code_f, "%s %s ", S_VAR, S_EQ);
+
+    int pr_exp_err = PrintExp(code_f, node->right);
+    ERROR_CHECK(pr_exp_err, ERROR_PRINT_EXP);
+
+    return SUCCESS;
+}
+
+int PrintExp(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    if (node == NULL)
+        return SUCCESS;
+
+    int err= 0;
+    err = PrintExp(code_f, node->left);
+    ERROR_CHECK(err, ERROR_PRINT_EXP);
+    
+    err = PrintVal(code_f, node);
+    ERROR_CHECK(err, ERROR_PRINT_EXP);
+
+    err = PrintExp(code_f, node->right);
+    ERROR_CHECK(err, ERROR_PRINT_EXP);
+
+
+    return SUCCESS;
+}
+
+int PrintVal(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    int err = 0;
+    switch (NTYPE(node))
+    {
+        case T_NUM  : fprintf(code_f, " %g ", NNUM(node));
+                      break;
+
+        case T_STR  : fprintf(code_f, " %s ", NSTR(node));
+                      break;
+
+        case T_EQ   : fprintf(code_f, " %s ", S_EQ);
+                      break;
+
+        case T_OP   : switch (NOP(node))
+                      {
+                          case OP_ADD : fprintf(code_f, " %s ", S_ADD);
+                                        break;
+                          case OP_SUB : fprintf(code_f, " %s ", S_SUB);
+                                        break;
+                          case OP_MUL : fprintf(code_f, " %s ", S_MUL);
+                                        break;
+                          case OP_DIV : fprintf(code_f, " %s ", S_DIV);
+                                        break;
+                          case OP_POW : fprintf(code_f, " %s ", S_POW);
+                                        break;
+                          case OP_SIN : fprintf(code_f, " %s ", S_SIN);
+                                        break;
+                          case OP_COS : fprintf(code_f, " %s ", S_COS);
+                                        break;
+                          case OP_TG  : fprintf(code_f, " %s ", S_TG);
+                                        break;
+                          default     : fprintf(code_f, " OP_ERROR ");
+                                        break;
+                      }
+                      break;
+
+        case T_CALL : err = PrintCall(code_f, node);
+                      ERROR_CHECK(err, ERROR_PRINT_CALL);
+                      break;
+
+        case T_NUM : fprintf(code_f, " %g ", NNUM(node));
+                     break;
+    }
+
+    return SUCCESS;
+}
+
+int PrintCall(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    ERROR_CHECK(node->left  == NULL, ERROR_SYNTAX);
+    ERROR_CHECK(node->right == NULL, ERROR_SYNTAX);
+
+    //...................z    
+
+    return SUCCESS;
+}
+
+int PrintFunc(FILE* code_f, TreeNode *node)
+{
+    ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+
+    
 
     return SUCCESS;
 }

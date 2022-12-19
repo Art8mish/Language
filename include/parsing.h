@@ -76,27 +76,31 @@ enum LexType
     LT_ELSE = 4,
     LT_WHILE = 5,
 
-    LT_FUNC = 6,
-    LT_RET  = 7,
-    LT_CALL = 8,
-    LT_PARAM = 9,
+    LT_TYPE_FUNC = 6,
+    LT_VOID_FUNC = 7,
+    LT_RET  = 8,
+    LT_CALL = 9,
+    LT_PARAM = 10,
 
-    LT_NUM  = 10,
-    LT_EQ   = 11,
-    LT_OP   = 12,
+    LT_NUM  = 11,
+    LT_EQ   = 12,
+    LT_OP   = 13,
+
+    LT_IN    = 15,
+    LT_OUT   = 16,
     
-    LT_STR  = 13,
+    LT_STR  = 17,
     
-    LT_EXP_L_BRCKT = 14,
-    LT_EXP_R_BRCKT = 15,
+    LT_EXP_L_BRCKT = 18,
+    LT_EXP_R_BRCKT = 19,
 
-    LT_STREAM_L_BRCKT = 16,
-    LT_STREAM_R_BRCKT = 17,
+    LT_STREAM_L_BRCKT = 20,
+    LT_STREAM_R_BRCKT = 21,
 
-    LT_ST_SEP = 18,
-    LT_COMMA  = 19,
+    LT_ST_SEP = 22,
+    LT_COMMA  = 23,
 
-    LT_END = 20,
+    LT_END = 24,
 };
 
 struct LangLexicalElem
@@ -123,9 +127,9 @@ enum LexError
 typedef struct LangLexicalElem LexStruct;
 
 const int MAX_CODE_LENGTH  = 1000;
-const int MAX_FUNCS_AMOUNT = 100;
-const int MAX_CMD_SIZE = 25;
-const int MAX_STR_SIZE = 20;
+const int MAX_FUNCS_AMOUNT = 20;
+const int MAX_CMD_SIZE = 50;
+const int MAX_STR_SIZE = 50;
 
 int LexStructsInit(LexStruct *lex_structs);
 int LexStructDtor(LexStruct *lex_structs, unsigned int struct_amount);
@@ -156,8 +160,12 @@ struct TreeNode *GetStr(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetExp(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetPow(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetUnar(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetBrackets(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetInOut(const LexStruct *lex_structs, unsigned int *index);
 struct TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index);
+struct TreeNode *GetParam(const LexStruct *lex_structs, unsigned int *index);
 
 #endif

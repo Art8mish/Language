@@ -20,7 +20,7 @@ const char *RusTranslate(const char *str)
     new_str[0] = '\0';
 
     if ((str[0] >= 'A' && str[0] <= 'Z') ||
-        (str[0] >= 'a' && str[0] <= 'z'))
+        (str[0] >= 'a' && str[0] <= 'z') || str[0] == '"')
     {
         strcpy(new_str, str);
         return new_str;

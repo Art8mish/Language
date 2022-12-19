@@ -85,14 +85,37 @@ LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount)
             {
                 LexStructDtor(lex_structs, index);
                 return NULL;
-            } 
+            }
 
-            if ((isspace(*buf) || (!isalpha(*buf) && !isdigit(*buf))) || 
-                                  (!isalpha(value[i-1]) && !isdigit(value[i-1])))
-                break;
-                                            
+            if ((value[0]) == '"')
+            {
+                if (*buf == '"')
+                {
+                    buf++;
+                    printf("buf: %s\n", buf);
+                    break;
+                }
+            }
+
+            else
+            {
+                if (isspace(*buf))
+                    break;
+
+                if (isdigit(value[0]))
+                {
+                    if (!isdigit(*buf) && *buf != '.')
+                        break;
+                }
+
+                else 
+                {
+                    if (!isalnum(value[i-1]) || !isalnum(*buf))
+                        break;
+                }   
+            }                         
         }  
-        value[i] = '\0';                                                      
+        value[i] = '\0';                                                  
         printf("readed value: %s\n", value); 
 
         int proc_arg_err = ProcessLexValue(lex_structs, value, &buf, &index);
@@ -129,6 +152,24 @@ int LexStructDtor(LexStruct *lex_structs, unsigned int struct_amount)
 }
 //_____________________________________________________________________________________________________
 
+#define PROC_LVAL_ITER(str, ltype)                          \
+            else if (strcmp(value, str) == 0)               \
+            {                                               \
+                printf("entered %s\n", str);                \
+                STRCT_T = ltype;                            \
+                (*index)++;                                 \
+            }
+
+#define PROC_LVAL_OP_ITER(str, oper)                        \
+            else if (strcmp(value, str) == 0)               \
+            {                                               \
+                printf("entered %s\n", str);                \
+                STRCT_T  = LT_OP;                           \
+                STRCT_OP = oper;                            \
+                (*index)++;                                 \
+            }
+
+
 int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index)
 {
     LEX_ERROR(lex_structs == NULL, ERROR_NULL_PTR, *index);
@@ -137,157 +178,70 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
     LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
     LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
 
-    if (strcmp(value, "var") == 0)
+    if (strcmp(value, S_VAR) == 0)
     {   
         printf("entered var\n");
         STRCT_T = LT_VAR;
         (*index)++;
-
-        int proc_var_err = ProcessVarInit(lex_structs, buf, index);
-        LEX_ERROR(proc_var_err, ERROR_PROCESS_VAR_INIT, *index);
     }
+    //     int proc_var_err = ProcessVarInit(lex_structs, buf, index);
+    //     LEX_ERROR(proc_var_err, ERROR_PROCESS_VAR_INIT, *index);
+    //
 
     else if (isdigit(value[0]))
     {
         printf("entered digit\n");
-        double num = ConvertStrToNum(value);
-        LEX_ERROR(isnan(num), ERROR_CONVERT_STR_TO_NUM, *index);
+        char *new_ptr = NULL;
+        double num = strtod(value, &new_ptr);
+        LEX_ERROR(new_ptr != value, ERROR_CONVERT_STR_TO_NUM, *index);
         STRCT_T = LT_NUM;
         STRCT_NUM  = num;
         (*index)++;
     }
 
-    else if (strcmp(value, "{") == 0)
-    {
-        printf("entered {\n");
-        STRCT_T = LT_STREAM_L_BRCKT;
-        (*index)++;
-    }
+    PROC_LVAL_ITER(S_ST_L_BRCKT,  LT_STREAM_L_BRCKT)
+    PROC_LVAL_ITER(S_ST_R_BRCKT,  LT_STREAM_R_BRCKT)
+    
+    PROC_LVAL_ITER(S_EXP_L_BRCKT,  LT_EXP_L_BRCKT)
+    PROC_LVAL_ITER(S_EXP_R_BRCKT,  LT_EXP_R_BRCKT)
+    
+    PROC_LVAL_ITER(S_ST_SEP,  LT_ST_SEP)
+    PROC_LVAL_ITER(",",  LT_COMMA)
 
-    else if (strcmp(value, "}") == 0)
-    {
-        printf("entered }\n");
-        STRCT_T = LT_STREAM_R_BRCKT;
-        (*index)++;
-    }
+    PROC_LVAL_ITER(S_EQ,  LT_EQ)
 
-    else if (strcmp(value, "(") == 0)
-    {
-        printf("entered (\n");
-        STRCT_T = LT_EXP_L_BRCKT;
-        (*index)++;
-    }
+    PROC_LVAL_ITER(S_IF,    LT_IF)
+    PROC_LVAL_ITER(S_ELSE,  LT_ELSE)
 
-    else if (strcmp(value, ")") == 0)
-    {
-        printf("entered )\n");
-        STRCT_T = LT_EXP_R_BRCKT;
-        (*index)++;
-    }
+    PROC_LVAL_ITER(S_RET,  LT_RET)
 
-    else if (strcmp(value, ";") == 0)
-    {
-        printf("entered ;\n");
-        STRCT_T = LT_ST_SEP;
-        (*index)++;
-    }
-
-    else if (strcmp(value, ",") == 0)
-    {
-        printf("entered ;\n");
-        STRCT_T = LT_COMMA;
-        (*index)++;
-    }
-
-    else if (strcmp(value, "=") == 0)
-    {
-        printf("entered =\n");
-        STRCT_T = LT_EQ;
-        (*index)++;
-        (*buf)++;
-
-        SKIP_SPACE(*buf, ERROR_SYNTAX);
-        char str[MAX_STR_SIZE] = { 0 };
-        READ_WHILE(str, (**buf != ';' && !isspace(**buf)));
-        LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
-
-        int proc_var_val = ProcessArg(lex_structs, index, str);
-        LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
-    }
-
-    else if (strcmp(value, "if") == 0)
-    {
-        printf("entered if\n");
-        STRCT_T = LT_IF;
-        (*index)++;
-
-        int proc_exp_err = ProcessExpression(lex_structs, buf, index);
-        LEX_ERROR(proc_exp_err, ERROR_PROCESS_EXPRESSION, *index);
-    }
-
-    else if (strcmp(value, "else") == 0)
-    {
-        printf("entered else\n");
-        STRCT_T = LT_ELSE;
-        (*index)++;
-    }
-
-    else if (strcmp(value, "func") == 0)
+    else if (strcmp(value, S_TYPE) == 0 || strcmp(value, S_VOID) == 0)
     {
         printf("entered func\n");
-        STRCT_T = LT_FUNC;
+
+        if (strcmp(value, S_VOID) == 0)
+            STRCT_T = LT_VOID_FUNC;
+
+        else
+            STRCT_T = LT_TYPE_FUNC;
         (*index)++;
 
         int proc_exp_err = ProcessFunction(lex_structs, buf, index);
         LEX_ERROR(proc_exp_err, ERROR_PROCESS_FUNCTION, *index);
     }
 
-    else if (strcmp(value, "return") == 0)
-    {
-        printf("entered return\n");
-        STRCT_T = LT_RET;
-        (*index)++;
+    
+    PROC_LVAL_OP_ITER(S_ADD,   OP_ADD)
+    PROC_LVAL_OP_ITER(S_SUB,   OP_SUB)
+    PROC_LVAL_OP_ITER(S_MUL,   OP_MUL)
+    PROC_LVAL_OP_ITER(S_DIV,   OP_DIV)
+    PROC_LVAL_OP_ITER(S_POW, OP_POW)
+    PROC_LVAL_OP_ITER(S_SIN, OP_SIN)
+    PROC_LVAL_OP_ITER(S_COS, OP_COS)
+    PROC_LVAL_OP_ITER(S_TG,  OP_TG)
 
-        SKIP_SPACE(*buf, ERROR_SYNTAX);
-        char str[MAX_STR_SIZE] = { 0 };
-        READ_WHILE(str, (**buf != ';' && !isspace(**buf)));
-        LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
-
-        int proc_var_val = ProcessArg(lex_structs, index, str);
-        LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
-    }
-
-    else if (strcmp(value, "+") == 0)
-    {
-        printf("entered +\n");
-        STRCT_T  = LT_OP;
-        STRCT_OP = OP_ADD;
-        (*index)++;
-    }
-
-    else if (strcmp(value, "-") == 0)
-    {
-        printf("entered -\n");
-        STRCT_T  = LT_OP;
-        STRCT_OP = OP_SUB;
-        (*index)++;
-    }
-
-    else if (strcmp(value, "*") == 0)
-    {
-        printf("entered *\n");
-        STRCT_T  = LT_OP;
-        STRCT_OP = OP_MUL;
-        (*index)++;
-    }
-
-    else if (strcmp(value, "/") == 0)
-    {
-        printf("entered /\n");
-        STRCT_T  = LT_OP;
-        STRCT_OP = OP_DIV;
-        (*index)++;
-    }
+    PROC_LVAL_ITER(S_OUT,  LT_IN)
+    PROC_LVAL_ITER(S_IN,  LT_OUT)
 
     else
     {
@@ -300,6 +254,7 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
 }
 //___________________________________________________________________________________________________
 
+/*
 int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index)
 {
     printf("entered ProcessExpression\n");
@@ -321,7 +276,7 @@ int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index)
         char str[MAX_STR_SIZE] = { 0 };
 
         READ_WHILE(str, **buf != '+' && **buf != '-' && **buf != ')' &&
-                        **buf != '*' && **buf != '/' && !isspace(**buf));
+                        **buf != '*' && **buf != '/' && **buf != '^' && !isspace(**buf));
         
         int proc_var_val = ProcessArg(lex_structs, index, str);
         LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
@@ -359,6 +314,11 @@ int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index)
                         (*index)++;
                         break;
 
+            case '^' :  STRCT_T  = LT_OP;
+                        STRCT_OP = OP_POW;
+                        (*index)++;
+                        break;
+
             default  :  LEX_ERROR(true, ERROR_SYNTAX, *index);
         }
         (*buf)++;
@@ -368,7 +328,7 @@ int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index)
     }
 
     return SUCCESS;
-}
+}*/
 //___________________________________________________________________________________________________
 
 int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
@@ -396,11 +356,11 @@ int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index)
     SKIP_SPACE(*buf, ERROR_SYNTAX);
 
 //read init val
-    READ_WHILE(str, **buf != ';' && !isspace(**buf));
-    LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
+    // READ_WHILE(str, **buf != ';' && !isspace(**buf));
+    // LEX_ERROR(str[0] == '\0', ERROR_SYNTAX, *index);
 
-    int proc_var_val = ProcessArg(lex_structs, index, str);
-    LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
+    // int proc_var_val = ProcessArg(lex_structs, index, str);
+    // LEX_ERROR(proc_var_val, ERROR_PROCESS_ARG, *index);
 
     return SUCCESS;
 }
@@ -473,8 +433,9 @@ int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str)
     if (isdigit(str[0]))
     {
         printf("entered digit\n");
-        double num = ConvertStrToNum(str);
-        ERROR_CHECK(isnan(num), ERROR_CONVERT_STR_TO_NUM);
+        char *new_ptr = NULL;
+        double num = strtod(str, &new_ptr);
+        LEX_ERROR(new_ptr != str, ERROR_CONVERT_STR_TO_NUM, *index);
         STRCT_T = LT_NUM;
         STRCT_NUM  = num;
         (*index)++;
@@ -601,14 +562,13 @@ TreeNode *GetExternal(const LexStruct *lex_structs, unsigned int *index)
     TreeNode *extra_node = NULL;
 
     bool first_cycle = true;
-    while (STRCT_T == LT_FUNC || STRCT_T == LT_VAR)
+    while (STRCT_T == LT_VOID_FUNC || STRCT_T == LT_TYPE_FUNC || STRCT_T == LT_VAR)
     {
         TreeNode *curr_st_node = NULL;
         T_NCTOR(curr_st_node, T_ST, ;);
 
-        if (STRCT_T == LT_FUNC)
+        if (STRCT_T == LT_VOID_FUNC || STRCT_T == LT_TYPE_FUNC)
         {
-            (*index)++;
             TreeNode *func_node = GetFuncDef(lex_structs, index);
             SAFE_LEX_ERROR(func_node == NULL, NDTOR(curr_st_node);, NULL, *index);
             
@@ -651,6 +611,13 @@ TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index)
     LEX_ERROR(index       == NULL, NULL, 0);
     LEX_ERROR(lex_structs == NULL, NULL, *index);
 
+    LEX_ERROR(STRCT_T != LT_VOID_FUNC && STRCT_T != LT_TYPE_FUNC, NULL, *index);
+
+    bool void_func = false;
+    if (STRCT_T == LT_VOID_FUNC)
+        void_func = true;
+    (*index)++;
+
     printf("entered GetFuncDef (%d)\n", *index);
 
     TreeNode *func_node = NULL;
@@ -663,6 +630,15 @@ TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index)
 
     TIE(func_node, func_name, TREE_TIE_LEFT, NDTOR(func_node);
                                              NDTOR(func_name););
+
+    TreeNode *type_func_node = NULL;
+    if (void_func)
+        T_NCTOR(type_func_node, T_VOID, NDTOR(func_node););
+    else
+        T_NCTOR(type_func_node, T_TYPE, NDTOR(func_node););
+
+    TIE(func_name, type_func_node, TREE_TIE_RIGHT, NDTOR(func_node);
+                                                   NDTOR(type_func_node););
 
     SAFE_LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NDTOR(func_node);, NULL, *index);
     (*index)++;
@@ -720,7 +696,7 @@ TreeNode *GetFuncDef(const LexStruct *lex_structs, unsigned int *index)
     TreeNode *st_node = GetStatementStream(lex_structs, index);
     SAFE_LEX_ERROR(st_node == NULL, NDTOR(func_node);, NULL, *index);
 
-    TIE(func_name, st_node, TREE_TIE_RIGHT, NDTOR(func_node);
+    TIE(func_node, st_node, TREE_TIE_RIGHT, NDTOR(func_node);
                                             NDTOR(st_node););
 
     printf("exit GetFuncDef (%d)\n", *index);
@@ -746,6 +722,9 @@ TreeNode *GetVar(const LexStruct *lex_structs, unsigned int *index)
 
     TIE(var_node, var_name, TREE_TIE_LEFT, NDTOR(var_node);
                                            NDTOR(var_name););
+
+    SAFE_LEX_ERROR(STRCT_T != LT_EQ, NDTOR(var_node);, NULL, *index);
+    (*index)++;
 
     TreeNode *val_node = GetExp(lex_structs, index);
     SAFE_LEX_ERROR(val_node == NULL, NDTOR(var_node);, NULL, *index);
@@ -786,11 +765,11 @@ TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index)
     TreeNode *st_node = NULL;
     T_NCTOR(st_node, T_ST, ;);
 
-    SAFE_LEX_ERROR(STRCT_T != LT_VAR   &&
-                   STRCT_T != LT_IF    &&
-                   STRCT_T != LT_WHILE &&
-                   STRCT_T != LT_RET   &&
-                   STRCT_T != LT_STR, NDTOR(st_node);, NULL, *index);
+    // SAFE_LEX_ERROR(STRCT_T != LT_VAR   &&
+    //                STRCT_T != LT_IF    &&
+    //                STRCT_T != LT_WHILE &&
+    //                STRCT_T != LT_RET   &&
+    //                STRCT_T != LT_STR, NDTOR(st_node);, NULL, *index);
 
     if (STRCT_T == LT_VAR)
     {
@@ -832,6 +811,20 @@ TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index)
                                               NDTOR(exp_node););
 
         SAFE_LEX_ERROR(STRCT_T != LT_ST_SEP, NDTOR(st_node);, NULL, *index);
+        (*index)++;
+    }
+
+    else if (STRCT_T == LT_IN || STRCT_T == LT_OUT)
+    {
+        printf("enter IN/OUT (%d)\n", *index);
+        
+        TreeNode *exp_node = GetExp(lex_structs, index);
+        LEX_ERROR(exp_node == NULL, NULL, *index);
+
+        TIE(st_node, exp_node, TREE_TIE_LEFT, NDTOR(st_node);
+                                              NDTOR(exp_node););
+
+        SAFE_LEX_ERROR(STRCT_T != LT_ST_SEP, NDTOR(exp_node);, NULL, *index);
         (*index)++;
     }
 
@@ -1083,11 +1076,11 @@ TreeNode *GetAdd(const LexStruct *lex_structs, unsigned int *index)
         TIE(parent_node, node, TREE_TIE_LEFT, NDTOR(parent_node);
                                               NDTOR(node););
 
-        TreeNode *scnd_node = GetMul(lex_structs, index);
-        SAFE_LEX_ERROR(scnd_node == NULL, NDTOR(parent_node);, NULL, *index);
+        TreeNode *extra_node = GetMul(lex_structs, index);
+        SAFE_LEX_ERROR(extra_node == NULL, NDTOR(parent_node);, NULL, *index);
 
-        TIE(parent_node, scnd_node, TREE_TIE_RIGHT, NDTOR(parent_node);
-                                                    NDTOR(scnd_node););
+        TIE(parent_node, extra_node, TREE_TIE_RIGHT, NDTOR(parent_node);
+                                                     NDTOR(extra_node););
 
         node = parent_node;
     }
@@ -1105,7 +1098,7 @@ TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index)
 
     printf("enter GetMul (%d)\n", *index);
 
-    TreeNode *node = GetBrackets(lex_structs, index);
+    TreeNode *node = GetPow(lex_structs, index);
     LEX_ERROR(node == NULL, NULL, *index);
 
     while (STRCT_T == LT_OP && (STRCT_OP == OP_MUL || STRCT_OP == OP_DIV))
@@ -1118,16 +1111,103 @@ TreeNode *GetMul(const LexStruct *lex_structs, unsigned int *index)
         TIE(parent_node, node, TREE_TIE_LEFT, NDTOR(parent_node);
                                               NDTOR(node););
 
-        TreeNode *scnd_node = GetMul(lex_structs, index);
-        SAFE_LEX_ERROR(scnd_node == NULL, NDTOR(parent_node);, NULL, *index);
+        TreeNode *extra_node = GetPow(lex_structs, index);
+        SAFE_LEX_ERROR(extra_node == NULL, NDTOR(parent_node);, NULL, *index);
 
-        TIE(parent_node, scnd_node, TREE_TIE_RIGHT, NDTOR(parent_node);
-                                                    NDTOR(scnd_node););
+        TIE(parent_node, extra_node, TREE_TIE_RIGHT, NDTOR(parent_node);
+                                                     NDTOR(extra_node););
 
         node = parent_node;
     }
 
     printf("exit GetMul (%d)\n", *index);
+
+    return node;
+}
+//___________________________________________________________________________________________________
+
+TreeNode *GetPow(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    printf("enter GetPow (%d)\n", *index);
+
+    TreeNode *node = NULL;
+    if (STRCT_T == LT_OP && STRCT_OP == OP_POW)
+    {   
+        TreeNode *parent_node = NULL;
+        T_NCTOR(parent_node, T_OP, NDTOR(node););
+        parent_node->value->arithm_op = OP_POW;
+        (*index)++;
+
+        SAFE_LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NDTOR(parent_node);, NULL, *index);
+        (*index)++;
+
+        node = GetAdd(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index); 
+
+        TIE(parent_node, node, TREE_TIE_LEFT, NDTOR(parent_node);
+                                              NDTOR(node););
+
+        SAFE_LEX_ERROR(STRCT_T != LT_COMMA, NDTOR(parent_node);, NULL, *index);
+        (*index)++;
+
+        TreeNode *extra_node = GetAdd(lex_structs, index);
+        SAFE_LEX_ERROR(extra_node == NULL, NDTOR(parent_node);, NULL, *index);
+
+        TIE(parent_node, extra_node, TREE_TIE_RIGHT, NDTOR(parent_node);
+                                                     NDTOR(extra_node););
+
+        SAFE_LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NDTOR(parent_node);, NULL, *index);
+        (*index)++;
+
+        node = parent_node;
+    }
+
+    else
+    {
+        node = GetUnar(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+    }
+
+    printf("exit GetPow (%d)\n", *index);
+
+    return node;
+}
+//___________________________________________________________________________________________________
+
+TreeNode *GetUnar(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    printf("enter GetUnar (%d)\n", *index);
+
+    TreeNode *node = NULL;
+
+    if (STRCT_T == LT_OP && (STRCT_OP == OP_SIN || STRCT_OP == OP_COS || STRCT_OP == OP_TG))
+    {
+        TreeNode *parent_node = NULL;
+        T_NCTOR(parent_node, T_OP, ;);
+        parent_node->value->arithm_op = STRCT_OP;
+        (*index)++;
+
+        node = GetBrackets(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+
+        TIE(parent_node, node, TREE_TIE_LEFT, NDTOR(parent_node);
+                                              NDTOR(node););
+        node = parent_node;
+    }
+
+    else
+    {
+        node = GetBrackets(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+    }
+
+    printf("exit GetUnar (%d)\n", *index);
 
     return node;
 }
@@ -1185,6 +1265,12 @@ TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index)
         node = num_node;
         (*index)++;
     }
+
+    else if (STRCT_T == LT_IN || STRCT_T == LT_OUT)
+    {
+        node = GetInOut(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+    }
     
     else if (STRCT_T == LT_STR)
     {
@@ -1199,9 +1285,11 @@ TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index)
         if (!is_func)
         {
             TreeNode *var_node = NULL;
-            STR_NCTOR(var_node, STRCT_STR, ;);
+            if (strcmp(STRCT_STR, "&") == 0)
+                (*index)++;
+            STR_NCTOR(var_node, STRCT_STR, ;);  
 
-            printf("arg = %s\n", STRCT_STR);
+            printf("arg = %s\n", var_node->value->str);
 
             node = var_node;
             (*index)++;
@@ -1209,7 +1297,7 @@ TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index)
 
         else
         {
-            node = GetFunc(lex_structs, index);
+            node = GetInOut(lex_structs, index);
             LEX_ERROR(node == NULL, NULL, *index);    
         }
     }
@@ -1221,6 +1309,60 @@ TreeNode *GetArg(const LexStruct *lex_structs, unsigned int *index)
     return node;
 }
 //___________________________________________________________________________________________________
+
+TreeNode *GetInOut(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    printf("enter GetInOut (%d)\n", *index);
+
+    TreeNode *node = NULL;
+
+    if (STRCT_T == LT_IN || STRCT_T == LT_OUT)
+    {
+        if (STRCT_T == LT_OUT)
+            T_NCTOR(node, T_OUT, ;);
+        else
+            T_NCTOR(node, T_IN, ;);
+        (*index)++;
+
+        SAFE_LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NDTOR(node);,  NULL, *index);
+        (*index)++;
+
+        SAFE_LEX_ERROR(STRCT_T != LT_STR, NDTOR(node);, NULL, *index);
+        SAFE_LEX_ERROR(STRCT_STR[0] != '"', NDTOR(node);, NULL, *index);
+
+        TreeNode *str_node = NULL;
+        STR_NCTOR(str_node, strdup(STRCT_STR + 1), NDTOR(node););
+        free((void *)STRCT_STR);
+        (*index)++;
+
+        TIE(node, str_node, TREE_TIE_RIGHT, NDTOR(node);
+                                            NDTOR(str_node););
+
+        SAFE_LEX_ERROR(STRCT_T != LT_COMMA, NDTOR(node);, NULL, *index);
+        (*index)++;
+        
+        TreeNode *param_node = GetParam(lex_structs, index);
+        if (param_node != NULL)
+            TIE(node, param_node, TREE_TIE_LEFT, NDTOR(node);
+                                                 NDTOR(param_node););
+        
+        SAFE_LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NDTOR(node);, NULL, *index);
+        (*index)++;
+    } 
+
+    else
+    {
+        node = GetFunc(lex_structs, index);
+        LEX_ERROR(node == NULL, NULL, *index);
+    }
+
+    printf("exit GetInOut (%d)\n", *index);
+
+    return node;
+}
 
 TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index)
 {
@@ -1234,53 +1376,68 @@ TreeNode *GetFunc(const LexStruct *lex_structs, unsigned int *index)
 
     TreeNode *func_name = NULL;
     STR_NCTOR(func_name, STRCT_STR, NDTOR(call_node););
-    TIE(call_node, func_name, TREE_TIE_LEFT, NDTOR(call_node);
-                                             NDTOR(func_name););
+
+    TIE(call_node, func_name, TREE_TIE_LEFT, NDTOR(call_node););
     (*index)++;
+
 
     SAFE_LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NDTOR(call_node);,  NULL, *index);
     (*index)++;
 
-    TreeNode *extra_node  = NULL;
-    bool first_cycle = true;
-    while (STRCT_T != LT_EXP_R_BRCKT)
-    {
-        if (!first_cycle)
-        {
-            SAFE_LEX_ERROR(STRCT_T != LT_COMMA, NDTOR(call_node);, NULL, *index);
-            (*index)++;
-        }
+    TreeNode *param_node = GetParam(lex_structs, index);
+    if (param_node != NULL)
+        TIE(func_name, param_node, TREE_TIE_LEFT, NDTOR(call_node);
+                                                  NDTOR(param_node););
 
-        TreeNode *param_node  = NULL;
-        T_NCTOR(param_node, T_PARAM, NDTOR(call_node););                
-
-        TreeNode *exp_node = GetExp(lex_structs, index);
-        SAFE_LEX_ERROR(exp_node == NULL, NDTOR(call_node);
-                                         NDTOR(param_node);, NULL, *index);
-
-        TIE(param_node, exp_node, TREE_TIE_LEFT, NDTOR(call_node);
-                                                 NDTOR(param_node);
-                                                 NDTOR(exp_node););
-
-        if (first_cycle)
-        {
-            TIE(func_name, param_node, TREE_TIE_LEFT, NDTOR(call_node);
-                                                      NDTOR(param_node););
-            extra_node  = param_node;
-            first_cycle = false;
-            continue;
-        }
-
-        TIE(extra_node, param_node, TREE_TIE_RIGHT, NDTOR(call_node);
-                                                    NDTOR(param_node););
-        extra_node = param_node;
-    }
     SAFE_LEX_ERROR(STRCT_T != LT_EXP_R_BRCKT, NDTOR(call_node);, NULL, *index);
     (*index)++;
 
     printf("exit GetFunc (%d)\n", *index);
 
     return call_node;
+}
+
+TreeNode *GetParam(const LexStruct *lex_structs, unsigned int *index)
+{
+    LEX_ERROR(index       == NULL, NULL, 0);
+    LEX_ERROR(lex_structs == NULL, NULL, *index);
+
+    TreeNode *ret_node = NULL;
+    TreeNode *extra_node = NULL;
+    bool first_cycle = true;
+    while (STRCT_T != LT_EXP_R_BRCKT)
+    {
+        if (!first_cycle)
+        {
+            SAFE_LEX_ERROR(STRCT_T != LT_COMMA, NDTOR(ret_node);, NULL, *index);
+            (*index)++;
+        }
+
+        TreeNode *param_node  = NULL;
+        T_NCTOR(param_node, T_PARAM, NDTOR(ret_node););                
+
+        TreeNode *exp_node = GetExp(lex_structs, index);
+        SAFE_LEX_ERROR(exp_node == NULL, NDTOR(ret_node);
+                                         NDTOR(param_node);, NULL, *index);
+
+        TIE(param_node, exp_node, TREE_TIE_LEFT, NDTOR(ret_node);
+                                                 NDTOR(param_node);
+                                                 NDTOR(exp_node););
+
+        if (first_cycle)
+        {
+            ret_node    = param_node;
+            extra_node  = param_node;
+            first_cycle = false;
+            continue;
+        }
+
+        TIE(extra_node, param_node, TREE_TIE_RIGHT, NDTOR(ret_node);
+                                                    NDTOR(param_node););
+        extra_node = param_node;
+    }
+
+    return ret_node;
 }
 //___________________________________________________________________________________________________
 
@@ -1306,7 +1463,7 @@ double ConvertStrToNum(const char *string)
         string++;
     }
 
-    if (*string == '.' || *string == ',')
+    if (*string == '.')
     {
         string++;
 

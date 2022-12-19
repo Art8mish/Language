@@ -129,6 +129,12 @@ int CreateTreeNodes(const struct TreeNode *curr_node, FILE *graph_f)
 
         case T_FUNC  :  fprintf(graph_f, "FUNC: ");
                         break;
+
+        case T_TYPE  :  fprintf(graph_f, "TYPE: ");
+                        break;
+
+        case T_VOID  :  fprintf(graph_f, "VOID: ");
+                        break;
             
         case T_RET   :  fprintf(graph_f, "RET: ");
                         break;
@@ -148,7 +154,13 @@ int CreateTreeNodes(const struct TreeNode *curr_node, FILE *graph_f)
         case T_OP    :  fprintf(graph_f, "OP: ");
                         break;
 
-        case T_STR    :  fprintf(graph_f, "STR: ");
+        case T_IN    :  fprintf(graph_f, "IN: ");
+                        break;
+
+        case T_OUT   :  fprintf(graph_f, "OUT: ");
+                        break;
+
+        case T_STR   :  fprintf(graph_f, "STR: ");
                         break;
 
         default      :  fprintf(graph_f, "ERROR");
@@ -170,6 +182,18 @@ int CreateTreeNodes(const struct TreeNode *curr_node, FILE *graph_f)
                       break;
 
         case OP_DIV : fprintf(graph_f, "DIV ");
+                      break;
+
+        case OP_POW : fprintf(graph_f, "POW ");
+                      break;
+
+        case OP_SIN : fprintf(graph_f, "SIN ");
+                      break;
+
+        case OP_COS : fprintf(graph_f, "COS ");
+                      break;
+
+        case OP_TG : fprintf(graph_f, "TG ");
                       break;
 
         default     : fprintf(graph_f, "ERROR");

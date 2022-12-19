@@ -259,42 +259,63 @@ int TreeSerialize(const struct Tree *tree)
 int SerializeNode(FILE *tree_f, const struct TreeNode *curr_node)
 {
     ERROR_CHECK(tree_f    == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(curr_node == NULL, ERROR_NULL_PTR);
     
-    bool child_ex = false;
+    bool last_node = false;
     static unsigned int recur_count = 0;
     recur_count++;
-
-    fprintf(tree_f, "\n");
-    for (unsigned int i = 1; i < recur_count; i++)
-        fprintf(tree_f, "\t");
-
-    if (curr_node != NULL)
+    
+    fprintf(tree_f, "{");
+    if (curr_node == NULL)
     {
-        fprintf(tree_f, "{");
+        fprintf(tree_f, " NIL ");
+        fprintf(tree_f, "} ");
+        recur_count--;
+        return SUCCESS;
+    }
+
+    else
+    {
         int print_tree_val_err = PrintTreeValue(tree_f, curr_node);
         ERROR_CHECK(print_tree_val_err, ERROR_PRINT_TREE_VALUE);
+
+        if (curr_node->left != NULL || curr_node->right != NULL)
+        {
+            if ((curr_node->left  != NULL && (curr_node->left->left   != NULL ||
+                                              curr_node->left->right  != NULL)) ||
+                (curr_node->right != NULL && (curr_node->right->left  != NULL ||
+                                              curr_node->right->right != NULL)))
+                last_node = true;
+
+            if (last_node)
+            {
+                fprintf(tree_f, "\n");
+                for (unsigned int i = 0; i < recur_count; i++)
+                    fprintf(tree_f, "\t");
+            }
+
+            int save_node_err = SerializeNode(tree_f, curr_node->left);
+            ERROR_CHECK(save_node_err, ERROR_SAVE_NODE);
+
+            if (last_node)
+            {
+                fprintf(tree_f, "\n");
+                for (unsigned int i = 0; i < recur_count; i++)
+                    fprintf(tree_f, "\t");
+            }
+
+                save_node_err = SerializeNode(tree_f, curr_node->right);
+            ERROR_CHECK(save_node_err, ERROR_SAVE_NODE);
+        }
     }
 
-    if (curr_node->left != NULL)
+    if (last_node)
     {
-        child_ex = true;
-        int save_node_err = SerializeNode(tree_f, curr_node->left);
-        ERROR_CHECK(save_node_err, ERROR_SAVE_NODE);
-    }
-
-    if (curr_node->right != NULL)
-    {
-        child_ex = true;
-        int save_node_err = SerializeNode(tree_f, curr_node->right);
-        ERROR_CHECK(save_node_err, ERROR_SAVE_NODE);
-    }
-
-    if (child_ex)
+        fprintf(tree_f, "\n");
         for (unsigned int i = 1; i < recur_count; i++)
             fprintf(tree_f, "\t");
+    }
 
-    fprintf(tree_f, "}\n");
+    fprintf(tree_f, "} ");
 
     recur_count--;
 
@@ -329,6 +350,12 @@ int PrintTreeValue(FILE *tree_f, const struct TreeNode *curr_node)
         case T_FUNC  :  fprintf(tree_f, " FUNC ");
                         break;
 
+        case T_TYPE  :  fprintf(tree_f, " TYPE ");
+                        break;
+
+        case T_VOID  :  fprintf(tree_f, " VOID ");
+                        break;
+
         case T_RET   :  fprintf(tree_f, " RET ");
                         break;
 
@@ -346,7 +373,7 @@ int PrintTreeValue(FILE *tree_f, const struct TreeNode *curr_node)
 
         case T_OP    :  switch (curr_node->value->arithm_op)
                         {
-                            case OP_PSN : fprintf(tree_f, " ERROR_ARITHM_OP ");
+                            case OP_PSN : fprintf(tree_f, " PSN_OP ");
                                           break;
                             case OP_ADD : fprintf(tree_f, " ADD ");
                                           break;
@@ -356,10 +383,23 @@ int PrintTreeValue(FILE *tree_f, const struct TreeNode *curr_node)
                                           break;
                             case OP_DIV : fprintf(tree_f, " DIV ");
                                           break;
-                            
+                            case OP_POW : fprintf(tree_f, " POW ");
+                                          break;
+                            case OP_SIN : fprintf(tree_f, " SIN ");
+                                          break;
+                            case OP_COS : fprintf(tree_f, " COS ");
+                                          break;
+                            case OP_TG  : fprintf(tree_f, " TG ");
+                                          break;  
                             default     : fprintf(tree_f, " ERROR_ARITHM_OP ");
                                           break;
                         }
+                        break;
+
+        case T_IN    :  fprintf(tree_f, " IN ");
+                        break;
+
+        case T_OUT   :  fprintf(tree_f, " OUT ");
                         break;
 
         case T_STR   :  fprintf(tree_f, " \"%s\" ", curr_node->value->str);
@@ -491,7 +531,6 @@ int ReadValue(char *value, char **buf)
     return SUCCESS;
 }
 
-
 struct LangNode *ProcessTreeValue(char *value)
 {
     ERROR_CHECK(value == NULL, NULL);
@@ -521,6 +560,12 @@ struct LangNode *ProcessTreeValue(char *value)
 
     else if (strcmp(value, "FUNC") == 0)
         new_struct->type = T_FUNC;
+
+    else if (strcmp(value, "TYPE") == 0)
+        new_struct->type = T_TYPE;
+
+    else if (strcmp(value, "VOID") == 0)
+        new_struct->type = T_VOID;
 
     else if (strcmp(value, "RET") == 0)
         new_struct->type = T_RET;
@@ -567,6 +612,36 @@ struct LangNode *ProcessTreeValue(char *value)
         new_struct->type      = T_OP;
         new_struct->arithm_op = OP_DIV;
     }
+
+    else if (strcmp(value, "POW") == 0)
+    {
+        new_struct->type      = T_OP;
+        new_struct->arithm_op = OP_POW;
+    }
+
+    else if (strcmp(value, "SIN") == 0)
+    {
+        new_struct->type      = T_OP;
+        new_struct->arithm_op = OP_SIN;
+    }
+
+    else if (strcmp(value, "COS") == 0)
+    {
+        new_struct->type      = T_OP;
+        new_struct->arithm_op = OP_COS;
+    }
+
+    else if (strcmp(value, "TG") == 0)
+    {
+        new_struct->type      = T_OP;
+        new_struct->arithm_op = OP_TG;
+    }
+
+    else if (strcmp(value, "IN") == 0)
+        new_struct->type = T_IN;
+
+    else if (strcmp(value, "OUT") == 0)
+        new_struct->type      = T_OUT;
 
     else if (value[0] == '"')
     {
