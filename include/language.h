@@ -25,6 +25,7 @@ enum LangError
     ERROR_PRINT_EXT_ST    = 2,
     ERROR_PRINT_EXP       = 3,
     ERROR_PRINT_CALL      = 4,
+    ERROR_PRINT_VAL       = 5,
 };
 
 enum NodeType
@@ -94,9 +95,6 @@ struct Var
     unsigned int adress = 0;
 };
 
-struct Tree *LangTreeDeserialize(const char *input_file_name);
-
-
 static const char *S_VAR    = "var";//"хуй_поймёшь";
 static const char *S_ST_SEP = ";";//"бля_буду";
 static const char *S_IF     = "if";//"пиздец?";
@@ -107,8 +105,8 @@ static const char *S_VOID   = "void";//"хуй_без_соли";
 static const char *S_RET    = "return";//"заебался";
 static const char *S_EQ     = "=";//"это_бля";
 
-static const char *S_IN     = "printf";//"пиздеть_не_мешки_ворочить";
-static const char *S_OUT    = "scanf";//"нука_спиздани";
+static const char *S_IN     = "scanf";//"пиздеть_не_мешки_ворочить";
+static const char *S_OUT    = "printf";//"нука_спиздани";
 
 static const char *S_EXP_L_BRCKT = "(";//"чё_за_хуйня";
 static const char *S_EXP_R_BRCKT = ")";//"похуй_пляшем";
@@ -124,6 +122,21 @@ static const char *S_SIN = "sin";//"хуинус";
 static const char *S_COS = "cos";//"хуёсинус";
 static const char *S_TG  = "tg";//"хуянгенс";
 
+struct Tree *LangTreeDeserialize(const char *input_file_name);
+
+int GenerateLangCode(struct Tree *tree);
+
+int PrintExt(FILE* code_f, struct TreeNode *node);
+int PrintExtSt(FILE* code_f, struct TreeNode *node);
+int PrintVar(FILE* code_f, struct TreeNode *node);
+int PrintExp(FILE* code_f, struct TreeNode *node);
+int PrintVal(FILE* code_f, struct TreeNode *node);
+int PrintCallFunc(FILE* code_f, struct TreeNode *node);
+int PrintFuncDef(FILE* code_f, struct TreeNode *node);
+int PrintStStream(FILE* code_f, TreeNode *node, unsigned int *recur_lvl);
+int PrintSt(FILE* code_f, TreeNode *node, unsigned int *recur_lvl);
+int PrintIf(FILE* code_f, TreeNode *node, unsigned int *recur_lvl);
+int PrintWhile(FILE* code_f, TreeNode *node, unsigned int *recur_lvl);
 
 #include "parsing.h"
 

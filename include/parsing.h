@@ -122,6 +122,12 @@ enum LexError
     ERROR_PROCESS_ARG        = 5,
     ERROR_PROCESS_FUNCTION   = 6,
     ERROR_RUS_TRANSLATE      = 7,
+    ERROR_PRINT_IF           = 8,
+    ERROR_PRINT_WHILE        = 9,
+    ERROR_PRINT_VAR          = 10,
+    ERROR_PRINT_FUNC_DEF     = 11,
+    ERROR_PRINT_ST_STREAM    = 12,
+    ERROR_PRINT_ST           = 13,
 };
 
 typedef struct LangLexicalElem LexStruct;
@@ -140,7 +146,7 @@ double ConvertStrToNum(const char *string);
 const char **FindFuncNames(const LexStruct *lex_structs, unsigned int *func_amount);
 
 int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned int *index);
-int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index);
+//int ProcessExpression(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessVarInit(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index);
 int ProcessArg(LexStruct *lex_structs, unsigned int *index, char *str);

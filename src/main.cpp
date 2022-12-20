@@ -16,6 +16,9 @@ int main(void)
     int ser_err = TreeSerialize(tree);
     ERROR_CHECK(ser_err, 2);
 
+    int gen_err = GenerateLangCode(tree);
+    ERROR_CHECK(gen_err, 3);
+
     // struct Tree *scnd_tree = TreeDeserialize(TREE_DESERIALIZATION_PATH);
     // ERROR_CHECK(scnd_tree == NULL, 1);
 
@@ -24,7 +27,7 @@ int main(void)
     // ERROR_CHECK(ser_err, 2);
 
     int dtor_err = TreeDtor(tree);
-    ERROR_CHECK(dtor_err, 3); 
+    ERROR_CHECK(dtor_err, 4); 
 
     // const char *str = "ÀÁÂÃÄÅ¨ÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞßàáâãäå¸æçèéêëìíîïğñòóôõöøùúûüışÿ";
     // printf("rus_str: %s\n", str);

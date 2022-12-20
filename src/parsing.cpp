@@ -87,33 +87,20 @@ LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount)
                 return NULL;
             }
 
-            if ((value[0]) == '"')
+            if (isspace(*buf))
+                break;
+
+            if (isdigit(value[0]))
             {
-                if (*buf == '"')
-                {
-                    buf++;
-                    printf("buf: %s\n", buf);
+                if (!isdigit(*buf) && *buf != '.')
                     break;
-                }
             }
 
-            else
+            else 
             {
-                if (isspace(*buf))
+                if (!isalnum(value[i-1]) || !isalnum(*buf))
                     break;
-
-                if (isdigit(value[0]))
-                {
-                    if (!isdigit(*buf) && *buf != '.')
-                        break;
-                }
-
-                else 
-                {
-                    if (!isalnum(value[i-1]) || !isalnum(*buf))
-                        break;
-                }   
-            }                         
+            }                       
         }  
         value[i] = '\0';                                                  
         printf("readed value: %s\n", value); 
@@ -191,9 +178,9 @@ int ProcessLexValue(LexStruct *lex_structs, char *value, char **buf, unsigned in
     else if (isdigit(value[0]))
     {
         printf("entered digit\n");
-        char *new_ptr = NULL;
-        double num = strtod(value, &new_ptr);
-        LEX_ERROR(new_ptr != value, ERROR_CONVERT_STR_TO_NUM, *index);
+        //char *new_ptr = NULL;
+        double num = strtod(value, NULL);
+        //LEX_ERROR(new_ptr != value, ERROR_CONVERT_STR_TO_NUM, *index);
         STRCT_T = LT_NUM;
         STRCT_NUM  = num;
         (*index)++;
@@ -804,11 +791,18 @@ TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index)
     else if (STRCT_T == LT_RET)
     {
         (*index)++;
+
+        TreeNode *ret_node = NULL;
+        T_NCTOR(ret_node, T_RET, NDTOR(st_node););
+
+        TIE(st_node, ret_node, TREE_TIE_LEFT, NDTOR(st_node);
+                                              NDTOR(ret_node););
+
         TreeNode *exp_node = GetExp(lex_structs, index);
         SAFE_LEX_ERROR(exp_node == NULL, NDTOR(st_node);, NULL, *index);
-        
-        TIE(st_node, exp_node, TREE_TIE_LEFT, NDTOR(st_node);
-                                              NDTOR(exp_node););
+
+        TIE(ret_node, exp_node, TREE_TIE_LEFT, NDTOR(st_node);
+                                               NDTOR(exp_node););
 
         SAFE_LEX_ERROR(STRCT_T != LT_ST_SEP, NDTOR(st_node);, NULL, *index);
         (*index)++;
@@ -1328,20 +1322,6 @@ TreeNode *GetInOut(const LexStruct *lex_structs, unsigned int *index)
         (*index)++;
 
         SAFE_LEX_ERROR(STRCT_T != LT_EXP_L_BRCKT, NDTOR(node);,  NULL, *index);
-        (*index)++;
-
-        SAFE_LEX_ERROR(STRCT_T != LT_STR, NDTOR(node);, NULL, *index);
-        SAFE_LEX_ERROR(STRCT_STR[0] != '"', NDTOR(node);, NULL, *index);
-
-        TreeNode *str_node = NULL;
-        STR_NCTOR(str_node, strdup(STRCT_STR + 1), NDTOR(node););
-        free((void *)STRCT_STR);
-        (*index)++;
-
-        TIE(node, str_node, TREE_TIE_RIGHT, NDTOR(node);
-                                            NDTOR(str_node););
-
-        SAFE_LEX_ERROR(STRCT_T != LT_COMMA, NDTOR(node);, NULL, *index);
         (*index)++;
         
         TreeNode *param_node = GetParam(lex_structs, index);

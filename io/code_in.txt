@@ -5,13 +5,13 @@ type υσι (var zombie, var urf)
 
     if  (tg(x) - 4 + 17.3)
     {
-        printf("x = %g", x);
+        printf( x);
         var z = pow(6 + x, 5) + 7 - 9 / x;
     }
     else
     {
         cos(υσι (20 -x * 6, urf));
-        scanf("%g%g", &x, &y);
+        scanf(&x, &y);
         x = y - 7 + 9;
     }
 

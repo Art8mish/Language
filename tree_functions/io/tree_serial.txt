@@ -1368,3 +1368,4677 @@
 		{ NIL } 
 	} 
 } 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ ADD { 142.33 } { 5 } } 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ ADD { 142.33 } { 5 } } 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "khuyj" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ OUT 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "khuyj" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ IN 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "main" 
+				{ PARAM 
+					{ VAR { "pizda" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "dyebil" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "khuyj" 
+							{ PARAM 
+								{ "dyebil" } 
+								{ PARAM { 7 } { NIL } } 
+							} 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ NIL } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 

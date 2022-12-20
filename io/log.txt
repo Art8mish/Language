@@ -6,13 +6,13 @@ type хуй (var zombie, var urf)
 
     if  (tg(x) - 4 + 17.3)
     {
-        printf("x = %g", x);
+        printf( x);
         var z = pow(6 + x, 5) + 7 - 9 / x;
     }
     else
     {
         cos(хуй (20 -x * 6, urf));
-        scanf("%g%g", &x, &y);
+        scanf(&x, &y);
         x = y - 7 + 9;
     }
 
@@ -87,92 +87,5830 @@ lex_structs:
 [31]: {
 [32]: OUT
 [33]: (
-[34]: STR: "x = %g (func_name: 0)
-[35]: ,
-[36]: STR: x (func_name: 0)
-[37]: )
-[38]: ;
-[39]: VAR
-[40]: STR: z (func_name: 0)
-[41]: EQ
-[42]: OP: 5
-[43]: (
-[44]: NUM: 6
-[45]: OP: 1
-[46]: STR: x (func_name: 0)
-[47]: ,
-[48]: NUM: 5
-[49]: )
-[50]: OP: 1
-[51]: NUM: 7
-[52]: OP: 2
-[53]: NUM: 9
-[54]: OP: 4
-[55]: STR: x (func_name: 0)
-[56]: ;
-[57]: }
-[58]: ELSE
-[59]: {
-[60]: OP: 7
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
 [61]: (
-[62]: STR: khuyj (func_name: 0)
-[63]: (
-[64]: NUM: 20
-[65]: OP: 2
-[66]: STR: x (func_name: 0)
-[67]: OP: 3
-[68]: NUM: 6
-[69]: ,
-[70]: STR: urf (func_name: 0)
-[71]: )
-[72]: )
-[73]: ;
-[74]: IN
-[75]: (
-[76]: STR: "%g%g (func_name: 0)
-[77]: ,
-[78]: STR: & (func_name: 0)
-[79]: STR: x (func_name: 0)
-[80]: ,
-[81]: STR: & (func_name: 0)
-[82]: STR: y (func_name: 0)
-[83]: )
-[84]: ;
-[85]: STR: x (func_name: 0)
-[86]: EQ
-[87]: STR: y (func_name: 0)
-[88]: OP: 2
-[89]: NUM: 7
-[90]: OP: 1
-[91]: NUM: 9
-[92]: ;
-[93]: }
-[94]: RET
-[95]: NUM: 142.33
-[96]: OP: 1
-[97]: NUM: 5
-[98]: ;
-[99]: }
-[100]: VOID_FUNC
-[101]: STR: main (func_name: 1)
-[102]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
 [103]: VAR
-[104]: STR: pizda (func_name: 0)
-[105]: )
-[106]: {
-[107]: VAR
-[108]: STR: dyebil (func_name: 0)
-[109]: EQ
-[110]: OP: 7
-[111]: (
-[112]: NUM: 5
-[113]: )
-[114]: ;
-[115]: STR: khuyj (func_name: 0)
-[116]: (
-[117]: STR: dyebil (func_name: 0)
-[118]: ,
-[119]: NUM: 7
-[120]: )
-[121]: ;
-[122]: }
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
+buf: 
+type хуй (var zombie, var urf)
+{
+    var x = 2.546;
+    var y =  4.45;
+
+    if  (tg(x) - 4 + 17.3)
+    {
+        printf( x);
+        var z = pow(6 + x, 5) + 7 - 9 / x;
+    }
+    else
+    {
+        cos(хуй (20 -x * 6, urf));
+        scanf(&x, &y);
+        x = y - 7 + 9;
+    }
+
+    return 142.33 + 5;
+}
+
+void main(var пизда)
+{
+    var дебил = cos(5);
+    хуй(дебил, 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lex_structs: 
+[0]: VAR_FUNC
+[1]: STR: khuyj (func_name: 1)
+[2]: (
+[3]: VAR
+[4]: STR: zombie (func_name: 0)
+[5]: ,
+[6]: VAR
+[7]: STR: urf (func_name: 0)
+[8]: )
+[9]: {
+[10]: VAR
+[11]: STR: x (func_name: 0)
+[12]: EQ
+[13]: NUM: 2.546
+[14]: ;
+[15]: VAR
+[16]: STR: y (func_name: 0)
+[17]: EQ
+[18]: NUM: 4.45
+[19]: ;
+[20]: IF
+[21]: (
+[22]: OP: 8
+[23]: (
+[24]: STR: x (func_name: 0)
+[25]: )
+[26]: OP: 2
+[27]: NUM: 4
+[28]: OP: 1
+[29]: NUM: 17.3
+[30]: )
+[31]: {
+[32]: OUT
+[33]: (
+[34]: STR: x (func_name: 0)
+[35]: )
+[36]: ;
+[37]: VAR
+[38]: STR: z (func_name: 0)
+[39]: EQ
+[40]: OP: 5
+[41]: (
+[42]: NUM: 6
+[43]: OP: 1
+[44]: STR: x (func_name: 0)
+[45]: ,
+[46]: NUM: 5
+[47]: )
+[48]: OP: 1
+[49]: NUM: 7
+[50]: OP: 2
+[51]: NUM: 9
+[52]: OP: 4
+[53]: STR: x (func_name: 0)
+[54]: ;
+[55]: }
+[56]: ELSE
+[57]: {
+[58]: OP: 7
+[59]: (
+[60]: STR: khuyj (func_name: 0)
+[61]: (
+[62]: NUM: 20
+[63]: OP: 2
+[64]: STR: x (func_name: 0)
+[65]: OP: 3
+[66]: NUM: 6
+[67]: ,
+[68]: STR: urf (func_name: 0)
+[69]: )
+[70]: )
+[71]: ;
+[72]: IN
+[73]: (
+[74]: STR: & (func_name: 0)
+[75]: STR: x (func_name: 0)
+[76]: ,
+[77]: STR: & (func_name: 0)
+[78]: STR: y (func_name: 0)
+[79]: )
+[80]: ;
+[81]: STR: x (func_name: 0)
+[82]: EQ
+[83]: STR: y (func_name: 0)
+[84]: OP: 2
+[85]: NUM: 7
+[86]: OP: 1
+[87]: NUM: 9
+[88]: ;
+[89]: }
+[90]: RET
+[91]: NUM: 142.33
+[92]: OP: 1
+[93]: NUM: 5
+[94]: ;
+[95]: }
+[96]: VOID_FUNC
+[97]: STR: main (func_name: 1)
+[98]: (
+[99]: VAR
+[100]: STR: pizda (func_name: 0)
+[101]: )
+[102]: {
+[103]: VAR
+[104]: STR: dyebil (func_name: 0)
+[105]: EQ
+[106]: OP: 7
+[107]: (
+[108]: NUM: 5
+[109]: )
+[110]: ;
+[111]: STR: khuyj (func_name: 0)
+[112]: (
+[113]: STR: dyebil (func_name: 0)
+[114]: ,
+[115]: NUM: 7
+[116]: )
+[117]: ;
+[118]: }
