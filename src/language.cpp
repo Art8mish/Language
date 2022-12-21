@@ -45,13 +45,6 @@ int PrepareAsm(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 
     fprintf(asmfile, "JMP :main\n\n");
 
-    fprintf(asmfile, "INCRIX:\n");
-    fprintf(asmfile, "PUSH rix\n");
-    fprintf(asmfile, "PUSH 1\n");
-    fprintf(asmfile, "ADD\n");
-    fprintf(asmfile, "POP rix\n");
-    fprintf(asmfile, "RET\n");
-
     return SUCCESS;
 }
 
@@ -217,15 +210,20 @@ struct Func *DefFuncs(TreeNode *st_node, unsigned int *func_amount)
     return reall_funcs;
 }
 
-#define EXT_VARS l_cntxt->ext_vars
+#define EXT_VARS     l_cntxt->ext_vars
 #define EXT_VARS_NUM l_cntxt->ext_vars_amount
-#define FUNCS l_cntxt->funcs
-#define FUNCS_NUM l_cntxt->funcs_amount
-#define RIX l_cntxt->rix
+#define FUNCS        l_cntxt->funcs
+#define FUNCS_NUM    l_cntxt->funcs_amount
+#define RIX          l_cntxt->rix
+#define CURR_FUNC    l_cntxt->funcs[l_cntxt->curr_func]
 
-#define INC_RIX                           \
-    fprintf(asmfile, "\nCALL :INCRIX\n"); \
-    l_cntxt->rix++
+
+#define INC_RIX(num)                        \
+    fprintf(asmfile, "PUSH rix\n");         \
+    fprintf(asmfile, "PUSH %d\n", num);     \
+    fprintf(asmfile, "ADD\n");              \
+    fprintf(asmfile, "POP rix\n\n");        \
+    l_cntxt->rix += num
 
 int AsmExt(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 {
@@ -305,7 +303,7 @@ int AsmExtVarDef(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 
     fprintf(asmfile, "POP [rix]\n\n\n");
     EXT_VARS[EXT_VARS_NUM].adress = RIX;
-    INC_RIX;
+    INC_RIX(1);
     EXT_VARS_NUM++;
 
     printf("exit AsmVar\n");
@@ -414,8 +412,12 @@ int AsmCallFunc(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
     ERROR_CHECK(NTYPE(node) != T_STR, ERROR_SYNTAX);
     ERROR_CHECK(NSTR(node) == NULL, ERROR_NULL_PTR);
 
+    unsigned int parent_func = l_cntxt->curr_func;
+
     int f_index = FindFunc(NSTR(node), l_cntxt);
     ERROR_CHECK(f_index < 0, ERROR_SYNTAX);
+
+    l_cntxt->curr_func = f_index;
 
     unsigned int index = 0;
     TreeNode *extra_node = node->left;
@@ -430,12 +432,17 @@ int AsmCallFunc(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
         ERROR_CHECK(err, ERROR_PRINT_EXP);
 
         fprintf(asmfile, "POP [rix]\n\n");
-        INC_RIX;
+        INC_RIX(1);
 
         extra_node = extra_node->right;
     }
 
     fprintf(asmfile, "CALL :%s\n\n", FUNCS[f_index].name);
+
+    if (FUNCS[f_index].ret_type == T_TYPE)
+        fprintf(asmfile, "PUSH rhx\n");
+
+    l_cntxt->curr_func = parent_func;
 
     printf("exit AsmCallFunc\n");
 
@@ -444,8 +451,8 @@ int AsmCallFunc(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 
 int FindFunc(const char *str, LangContext *l_cntxt)
 {
-    ERROR_CHECK(str == NULL, -1);
-    ERROR_CHECK(l_cntxt == NULL, -1);
+    ERROR_CHECK(str     == NULL, ERROR_NO_RESULT);
+    ERROR_CHECK(l_cntxt == NULL, ERROR_NO_RESULT);
 
     int index = 0;
     for (; index < FUNCS_NUM; index++)
@@ -456,7 +463,7 @@ int FindFunc(const char *str, LangContext *l_cntxt)
     }
 
     if (index == FUNCS_NUM)
-        return -1;
+        return ERROR_NO_RESULT;
 
     return index;
 }
@@ -475,17 +482,61 @@ int AsmFuncDef(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
     int find_func = FindFunc(NSTR(node->left), l_cntxt);
     ERROR_CHECK(find_func >= 0, ERROR_SYNTAX);
 
-    FUNCS[FUNCS_NUM].name = NSTR(node->left);
-    fprintf(asmfile, "%s:\n", FUNCS[FUNCS_NUM].name);
+    l_cntxt->curr_func = FUNCS_NUM; 
+    CURR_FUNC.name = NSTR(node->left);
+    fprintf(asmfile, "%s:\n", CURR_FUNC.name); 
 
     ERROR_CHECK(node->left->right == NULL, ERROR_SYNTAX);
     ERROR_CHECK(!(NTYPE(node->left->right) == T_TYPE || 
                   NTYPE(node->left->right) == T_VOID), ERROR_SYNTAX);
 
-    FUNCS[FUNCS_NUM].ret_type = NTYPE(node->left->right);
+    CURR_FUNC.ret_type = NTYPE(node->left->right);
+
+    int asm_init_params = AsmInitParams(asmfile, node->left->left, l_cntxt);
+    ERROR_CHECK(asm_init_params, ERROR_ASM_INIT_PARAMS);
+
+    int asm_init_err = AsmInitLocVars(asmfile, node->right, l_cntxt);
+    ERROR_CHECK(asm_init_err, ERROR_ASM_INIT_LOC_VAR);
+
+    int asm_st_str_err = AsmStStream(asmfile, node->right, l_cntxt);
+    ERROR_CHECK(asm_st_str_err, ERROR_ASM_ST_STREAM);
+
+    fprintf(asmfile, "RET\n\n");
+    FUNCS_NUM++;
+
+    printf("exit AsmFuncDef\n");
+
+    return SUCCESS;
+}
+
+// int CountVarInit(TreeNode *node, unsigned int *var_amount)
+// {
+//     ERROR_CHECK(var_amount == NULL, ERROR_NULL_PTR);
+
+//     if (node == NULL)
+//         return SUCCESS;
+
+//     int count_var_err = CountVarInit(node->left, var_amount);
+//     ERROR_CHECK(count_var_err, ERROR_COUNT_VAR_INIT);
+
+//     int count_var_err = CountVarInit(node->right, var_amount);
+//     ERROR_CHECK(count_var_err, ERROR_COUNT_VAR_INIT);
+
+//     if (node->value->type == T_VAR)
+//         (*var_amount)++;
+
+//     return SUCCESS;
+// }
+
+int AsmInitParams(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
+{
+    ERROR_CHECK(asmfile == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(l_cntxt == NULL, ERROR_NULL_PTR);
+
+    printf("enter AsmInitParams\n");
 
     int var_count = 0;
-    TreeNode *extra_node = node->left->left;
+    TreeNode *extra_node = node;
     while (true)
     {
         if (extra_node == NULL)
@@ -500,17 +551,51 @@ int AsmFuncDef(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
         ERROR_CHECK(NTYPE(extra_node->left->left) != T_STR, ERROR_SYNTAX);
         ERROR_CHECK( NSTR(extra_node->left->left) == NULL,  ERROR_NULL_PTR);
 
-        FUNCS[FUNCS_NUM].vars[var_count].name = NSTR(extra_node->left->left);
-        var_count++;
+        CURR_FUNC.vars[CURR_FUNC.vars_amount].name = NSTR(extra_node->left->left);
+        CURR_FUNC.vars_amount++;
 
         extra_node = extra_node->right;
     }
 
-    unsigned int recur_lvl = 0;
-    int err = AsmStStream(asmfile, node->right, l_cntxt);
-    ERROR_CHECK(err, ERROR_ASM_ST_STREAM);
+    printf("exit AsmInitParams\n");
 
-    printf("exit AsmFuncDef\n");
+    return SUCCESS;
+}
+
+int AsmInitLocVars(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
+{
+    ERROR_CHECK(asmfile == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(l_cntxt == NULL, ERROR_NULL_PTR);
+
+    printf("enter AsmInitLocVar\n");
+
+    if (node == NULL)
+        return SUCCESS;
+
+    int asm_init_err = AsmInitLocVars(asmfile, node->left, l_cntxt);
+    ERROR_CHECK(asm_init_err, ERROR_ASM_INIT_LOC_VAR);
+
+        asm_init_err = AsmInitLocVars(asmfile, node->right, l_cntxt);
+    ERROR_CHECK(asm_init_err, ERROR_ASM_INIT_LOC_VAR);
+
+    if (node->value->type == T_VAR)
+    {
+        ERROR_CHECK(node->left  == NULL, ERROR_SYNTAX);
+        ERROR_CHECK(node->right == NULL, ERROR_SYNTAX);
+
+        ERROR_CHECK(NSTR(node->left) == NULL, ERROR_NULL_PTR);
+
+        CURR_FUNC.vars[CURR_FUNC.vars_amount].name = NSTR(node->left);
+
+        int pr_exp_err = AsmExp(asmfile, node->right, l_cntxt);
+        ERROR_CHECK(pr_exp_err, ERROR_PRINT_EXP);
+
+        fprintf(asmfile, "POP [rix]\n\n\n");
+        CURR_FUNC.vars_amount++;
+        INC_RIX(1);
+    }
+
+    printf("exit AsmInitLocVar\n");
 
     return SUCCESS;
 }
@@ -562,19 +647,19 @@ int AsmSt(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
                         ERROR_CHECK(err, ERROR_ASM_WHILE);
                         break;
 
-        case T_VAR:     err = AsmLocVar(asmfile, node, l_cntxt);
-                        ERROR_CHECK(err, ERROR_ASM_VAR);
-                        break;
+        case T_VAR:     break;
 
-        case T_RET:     ERROR_CHECK(node->left  == NULL, ERROR_SYNTAX);
+        case T_RET:     ERROR_CHECK((CURR_FUNC.ret_type == T_TYPE && node->left  == NULL) ||
+                                    (CURR_FUNC.ret_type == T_VOID && node->left  != NULL) , ERROR_SYNTAX);
                         ERROR_CHECK(node->right != NULL, ERROR_SYNTAX);
 
                         err = AsmExp(asmfile, node->left, l_cntxt);
                         ERROR_CHECK(err, ERROR_ASM_EXP);
                         fprintf(asmfile, "POP rhx\n");
+                        fprintf(asmfile, "RET\n\n");
                         break;
 
-        case T_EQ:      err = AsmExp(asmfile, node, l_cntxt);
+        case T_EQ:      err = AsmEq(asmfile, node, l_cntxt);
                         ERROR_CHECK(err, ERROR_PRINT_EXP);
 
         case T_NUM: // falling
@@ -582,22 +667,62 @@ int AsmSt(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
         case T_OP:  // falling
         case T_CALL:    err = AsmExp(asmfile, node, l_cntxt);
                         ERROR_CHECK(err, ERROR_PRINT_EXP);
-                        fprintf(code_f, " %s\n", S_ST_SEP);
                         break;
 
         case T_IN:      
-        case T_OUT:     err = AsmInOut(code_f, node, l_cntxt);
-                        ERROR_CHECK(err, ERROR_PRINT_CALL);
-                        fprintf(code_f, " %s\n", S_ST_SEP);
+        case T_OUT:     err = AsmInOut(asmfile, node, l_cntxt);
+                        ERROR_CHECK(err, ERROR_ASM_IN_OUT);
                         break;
 
-        default:        fprintf(code_f, " ERROR_PRINT_ST(%d) ", (NTYPE(node)));
+        default:        fprintf(asmfile, " ERROR_PRINT_ST(%d) ", (NTYPE(node)));
                         break;
     }
 
     printf("exit AsmSt\n");
 
     return SUCCESS;
+}
+
+
+
+int AsmEq(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
+{
+    ERROR_CHECK(asmfile == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(l_cntxt == NULL, ERROR_NULL_PTR);
+
+    ERROR_CHECK(node->left  == NULL, ERROR_SYNTAX);
+    ERROR_CHECK(node->right == NULL, ERROR_SYNTAX);
+
+    ERROR_CHECK(NSTR(node->left) == NULL, ERROR_NULL_PTR);
+
+    int var_type = FindVar(asmfile, NSTR(node->left), l_cntxt);
+    ERROR_CHECK(find_asm_var_err, ERROR_FIND_VAR);
+
+
+    return SUCCESS;
+}
+
+int FindVar(FILE *asmfile, const char *var_name, unsigned int *var_adress, LangContext *l_cntxt)
+{
+    ERROR_CHECK(asmfile  == NULL, ERROR_NO_RESULT);
+    ERROR_CHECK(var_name == NULL, ERROR_NO_RESULT);
+    ERROR_CHECK(l_cntxt  == NULL, ERROR_NO_RESULT);
+
+    int var_type = 0;
+    for (unsigned int index = 0; index < CURR_FUNC.vars_amount; index++)
+    {
+        if (strcmp(var_name, CURR_FUNC.vars[index].name) == NULL)
+        {
+            var_type = LOCAL_VAR;
+
+            var_adress = RIX - CURR_FUNC.vars[index].adress
+            
+            return var_type;
+        }
+            
+    }
+
+    return NO_VAR;
 }
 
 int AsmIf(FILE *code_f, TreeNode *node, unsigned int *recur_lvl)
