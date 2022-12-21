@@ -247,7 +247,7 @@ int IsReg(char *buf, int *arg)
     ERROR_CHECK(buf == NULL, PTR_NULL);
     ERROR_CHECK(arg == NULL, PTR_NULL);
 
-    ERROR_CHECK(*(buf + 1) < 'a' || *(buf + 1) > 'd', SYNTAX_ERROR);
+    ERROR_CHECK(*(buf + 1) < 'a' || *(buf + 1) > 'j', SYNTAX_ERROR);
     ERROR_CHECK(*(buf + 2) != 'x', SYNTAX_ERROR);
 
     *arg = *(buf+1) - 'a' + 1;

@@ -2,20 +2,20 @@
 
 #define PRINT_ARG()                                                      \
     if (*((int*)code) & MEMORY_CODE)                                     \
-        printf("RAM : ");                                    \
+        printf("RAM : ");                                                \
     if ((*((int*)code) & REGISTER_CODE) &&                               \
         (*((int*)code) & IMMEDIATE_CONST_CODE))                          \
     {                                                                    \
-        printf("%lf (num) & %d (reg)", *(code+1), *(code+2));\
+        printf("%lf (num) & %d (reg)", *(code+1), *(code+2));            \
         two_arg = true;                                                  \
     }                                                                    \
     else if (*((int*)code) & REGISTER_CODE)                              \
-        printf("%d (reg)", *((int *)(code + 1)));            \
+        printf("%d (reg)", *((int *)(code + 1)));                        \
     else if (*((int*)code) & IMMEDIATE_CONST_CODE)                       \
-        printf("%g (num)", *(code + 1));                     \
+        printf("%g (num)", *(code + 1));                                 \
     else                                                                 \
-        printf("ERROR/label : %d", *(code + 1));             \
-    printf("\n");                                            \
+        printf("ERROR/label : %d", *(code + 1));                         \
+    printf("\n");                                                        \
                                                                          \
     if (two_arg)                                                         \
     {                                                                    \

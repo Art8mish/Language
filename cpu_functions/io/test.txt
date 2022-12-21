@@ -1,0 +1,16 @@
+push 17
+push 15
+pop rix
+
+push rix
+push 5
+sub
+pop rix
+pop [rix]
+push rix
+push 5
+add
+pop rix
+
+dump
+hlt

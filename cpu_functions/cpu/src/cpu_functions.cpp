@@ -63,7 +63,8 @@ int ExecuteCode(struct CpuField *field)
                                         GetPtrArg(field, &ptr_arg_val);  \
                                         printf(" : arg = %g", *ptr_arg_val);\
                                     }\
-                                    cpu_code                             \                              
+                                    cpu_code                                    \
+                                    printf(" : arg (after) = %g", *ptr_arg_val);\
                                     printf("\n"); \
                                     break;
 
@@ -94,12 +95,16 @@ int GetPtrArg(struct CpuField *field, double **val)
     **val = 0;
 
     if (cmd & IMMEDIATE_CONST_CODE)
+    {
+        printf(" IMCONST ");
         **val += field->code_buffer[++field->pc];
+    }
 
     if (cmd & REGISTER_CODE)
     {
+        printf(" REG ");
         field->pc++;
-        ERROR_CHECK(*((int *)(field->code_buffer + field->pc)) < 0 || *((int *)(field->code_buffer + field->pc)) > (int)REGS_AMOUNT, SYNTAX_ERROR);
+        //ERROR_CHECK(*((int *)(field->code_buffer + field->pc)) < 0 || *((int *)(field->code_buffer + field->pc)) > (int)REGS_AMOUNT, SYNTAX_ERROR);
 
         if ((cmd & IMMEDIATE_CONST_CODE) || (cmd & MEMORY_CODE))
             **val += field->Regs[*((int *)(field->code_buffer + field->pc))];
@@ -112,8 +117,9 @@ int GetPtrArg(struct CpuField *field, double **val)
 
     if (cmd & MEMORY_CODE)
     {
-        ERROR_CHECK(*((int*)(*val)) < 0 || *((int*)(*val)) >= (double)RAM_SIZE, INCORRECT_RAM_CELL_ERROR);
-        *val = &field->Ram[*((int*)(*val))];
+        printf(" MEM ");
+        ERROR_CHECK((int)(**val) < 0 || (int)(**val) >= (double)RAM_SIZE, INCORRECT_RAM_CELL_ERROR);
+        *val = &field->Ram[(int)(**val)];
 
         return SUCCESS;
     }

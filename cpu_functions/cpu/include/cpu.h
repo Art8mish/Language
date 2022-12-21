@@ -69,7 +69,7 @@ const size_t CPU_VERSION      = 1;
 
 const size_t SIGNATURE_LENGTH = 3;
 const size_t RAM_SIZE         = 10000;
-const size_t REGS_AMOUNT      = 5;
+const size_t REGS_AMOUNT      = 11;
 const size_t HEADER_SIZE      = 3;
 
 const char * const SIGNATURE  = "DP";

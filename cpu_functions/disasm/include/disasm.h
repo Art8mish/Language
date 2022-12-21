@@ -95,10 +95,16 @@ struct DisAsmField
 
 enum Register
 {
-     FIRST_REG = 1,
-    SECOND_REG = 2,
-     THIRD_REG = 3,
-    FOURTH_REG = 4,
+      FIRST_REG = 1,
+     SECOND_REG = 2,
+      THIRD_REG = 3,
+     FOURTH_REG = 4,
+      FIFTH_REG = 5,
+      SIXTH_REG = 6,
+    SEVENTH_REG = 7,
+     EIGHTH_REG = 8,
+      NINTH_REG = 9,
+      TENTH_REG = 10,
 };
 
 

@@ -6042,3 +6042,257 @@
 		{ NIL } 
 	} 
 } 
+{ ST 
+	{ FUNC 
+		{ "main" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ IN 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "main" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ OUT 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "frt" 
+				{ PARAM 
+					{ VAR { "z" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "tp" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "frt" 
+							{ PARAM { "z" } { NIL } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ ST { RET } { NIL } } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 
+{ ST 
+	{ FUNC 
+		{ "main" 
+			{ PARAM 
+				{ VAR { "zombie" } { NIL } } 
+				{ PARAM 
+					{ VAR { "urf" } { NIL } } 
+					{ NIL } 
+				} 
+			} 
+			{ TYPE } 
+		} 
+		{ ST 
+			{ VAR { "x" } { 2.546 } } 
+			{ ST 
+				{ VAR { "y" } { 4.45 } } 
+				{ ST 
+					{ IF 
+						{ ADD 
+							{ SUB 
+								{ TG { "x" } { NIL } } 
+								{ 4 } 
+							} 
+							{ 17.3 } 
+						} 
+						{ ELSE 
+							{ ST 
+								{ IN 
+									{ PARAM { "x" } { NIL } } 
+									{ NIL } 
+								} 
+								{ ST 
+									{ VAR 
+										{ "z" } 
+										{ SUB 
+											{ ADD 
+												{ POW 
+													{ ADD { 6 } { "x" } } 
+													{ 5 } 
+												} 
+												{ 7 } 
+											} 
+											{ DIV { 9 } { "x" } } 
+										} 
+									} 
+									{ NIL } 
+								} 
+							} 
+							{ ST 
+								{ COS 
+									{ CALL 
+										{ "main" 
+											{ PARAM 
+												{ SUB 
+													{ 20 } 
+													{ MUL { "x" } { 6 } } 
+												} 
+												{ PARAM { "urf" } { NIL } } 
+											} 
+											{ NIL } 
+										} 
+										{ NIL } 
+									} 
+									{ NIL } 
+								} 
+								{ ST 
+									{ OUT 
+										{ PARAM 
+											{ "x" } 
+											{ PARAM { "y" } { NIL } } 
+										} 
+										{ NIL } 
+									} 
+									{ ST 
+										{ EQ 
+											{ "x" } 
+											{ ADD 
+												{ SUB { "y" } { 7 } } 
+												{ 9 } 
+											} 
+										} 
+										{ NIL } 
+									} 
+								} 
+							} 
+						} 
+					} 
+					{ ST 
+						{ RET 
+							{ ADD { 142.33 } { 5 } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+				} 
+			} 
+		} 
+	} 
+	{ ST 
+		{ FUNC 
+			{ "frt" 
+				{ PARAM 
+					{ VAR { "z" } { NIL } } 
+					{ NIL } 
+				} 
+				{ VOID } 
+			} 
+			{ ST 
+				{ VAR 
+					{ "tp" } 
+					{ COS { 5 } { NIL } } 
+				} 
+				{ ST 
+					{ CALL 
+						{ "frt" 
+							{ PARAM { "z" } { NIL } } 
+							{ NIL } 
+						} 
+						{ NIL } 
+					} 
+					{ ST { RET } { NIL } } 
+				} 
+			} 
+		} 
+		{ NIL } 
+	} 
+} 

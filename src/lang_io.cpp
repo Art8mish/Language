@@ -195,12 +195,10 @@ int GenerateLangCode(struct Tree *tree)
 int PrintExt(FILE* code_f, TreeNode *node)
 {
     ERROR_CHECK(code_f == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(node == NULL, ERROR_SYNTAX);
 
     printf("enter PrintExt\n");
 
-    if (node == NULL)
-        return SUCCESS;
-    
     TreeNode *extra_node = node;
     while (true)
     {
@@ -227,7 +225,6 @@ int PrintExtSt(FILE* code_f, TreeNode *node)
 
     if (node == NULL)
         return SUCCESS;
-    ERROR_CHECK(node == NULL, ERROR_SYNTAX);
 
     int err = 0;
     switch (NTYPE(node))
@@ -283,9 +280,10 @@ int PrintExp(FILE* code_f, TreeNode *node)
 
     int err= 0;
     if (!(NTYPE(node) == T_OP && 
-         (NOP(node) == OP_POW || NOP(node) == OP_SIN ||
-          NOP(node) == OP_COS || NOP(node) == OP_TG))  &&
-        !(NTYPE(node) == T_CALL))
+         (NOP(node) == OP_POW || 
+          NOP(node) == OP_SIN ||
+          NOP(node) == OP_COS || 
+          NOP(node) == OP_TG)) && !(NTYPE(node) == T_CALL))
     {
         err = PrintExp(code_f, node->left);
         ERROR_CHECK(err, ERROR_PRINT_EXP);
@@ -467,10 +465,13 @@ int PrintFuncDef(FILE* code_f, TreeNode *node)
     }
     fprintf(code_f, " %s\n", S_EXP_R_BRCKT);
 
+
     fprintf(code_f, "%s\n", S_ST_L_BRCKT);
+
     unsigned int recur_lvl = 0;
     int err = PrintStStream(code_f, node->right, &recur_lvl);
     ERROR_CHECK(err, ERROR_PRINT_ST_STREAM);
+    
     fprintf(code_f, "%s\n\n", S_ST_R_BRCKT);
 
     printf("exit PrintFuncDef\n");
@@ -536,7 +537,6 @@ int PrintSt(FILE* code_f, TreeNode *node, unsigned int *recur_lvl)
 
         case T_RET   :  fprintf(code_f, "%s ", S_RET);
 
-                        ERROR_CHECK(node->left  == NULL, ERROR_SYNTAX);
                         ERROR_CHECK(node->right != NULL, ERROR_SYNTAX);
                         
                         err = PrintExp(code_f, node->left);

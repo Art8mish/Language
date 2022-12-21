@@ -1,4 +1,4 @@
-type khuyj ( var zombie, var urf )
+type main ( var zombie, var urf )
 {
 	var x = 2.546 ;
 
@@ -6,25 +6,26 @@ type khuyj ( var zombie, var urf )
 
 	if ( tg ( x ) - 4 + 17.3 )
 	{
-		printf ( x ) ;
+		scanf ( &x ) ;
 		var z = pow ( 6 + x, 5 ) + 7 - 9 / x ;
 
 	}
 
 	else
 	{
-		cos ( khuyj ( 20 - x * 6, urf ) ) ;
-		scanf ( &x, &y ) ;
+		cos ( main ( 20 - x * 6, urf ) ) ;
+		printf ( x, y ) ;
 		x = y - 7 + 9 ;
 	}
 
 	return 142.33 + 5 ;
 }
 
-void main ( var pizda )
+void frt ( var z )
 {
-	var dyebil = cos ( 5 ) ;
+	var tp = cos ( 5 ) ;
 
-	khuyj ( dyebil, 7 ) ;
+	frt ( z ) ;
+	return  ;
 }
 

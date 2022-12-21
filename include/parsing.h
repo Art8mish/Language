@@ -134,12 +134,14 @@ typedef struct LangLexicalElem LexStruct;
 
 const int MAX_CODE_LENGTH  = 1000;
 const int MAX_FUNCS_AMOUNT = 20;
+const int MAX_EXT_VAR_AMOUNT  = 30;
+const int MAX_FUNC_VAR_AMOUNT = 30;
+const int MAX_FUNC_RECIEVED_VAR = 5;
 const int MAX_CMD_SIZE = 50;
 const int MAX_STR_SIZE = 50;
 
 int LexStructsInit(LexStruct *lex_structs);
 int LexStructDtor(LexStruct *lex_structs, unsigned int struct_amount);
-
 LexStruct *LexicalAnalisis(char *buf, unsigned int *lex_structs_amount);
 
 double ConvertStrToNum(const char *string);

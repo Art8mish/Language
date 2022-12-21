@@ -1,0 +1,26 @@
+static const char *S_VAR    = "хуй_поймёшь";
+static const char *S_ST_SEP = "бля_буду";
+static const char *S_IF     = "не_спиздеть";
+static const char *S_ELSE   = "проёб";
+static const char *S_WHILE  = "хуярим";
+static const char *S_TYPE   = "хуй_с_солью";
+static const char *S_VOID   = "хуй_без_соли";
+static const char *S_RET    = "заебался";
+static const char *S_EQ     = "пусть_бля";
+
+static const char *S_IN     = "чё_еще_скажешь";
+static const char *S_OUT    = "спиздануть";
+
+static const char *S_EXP_L_BRCKT = "чё_за_хуйня";
+static const char *S_EXP_R_BRCKT = "похуй_пляшем";
+static const char *S_ST_L_BRCKT  = "открыть_хайло";
+static const char *S_ST_R_BRCKT  = "открыть_хайло";
+
+static const char *S_ADD = "доебнуть";
+static const char *S_SUB = "отъебнуть";
+static const char *S_MUL = "въебать";
+static const char *S_DIV = "разъебать";
+static const char *S_POW = "уебашить";
+static const char *S_SIN = "хуинус";
+static const char *S_COS = "хуёсинус";
+static const char *S_TG  = "хуянгенс";

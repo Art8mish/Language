@@ -72,14 +72,26 @@ int PrintArg(struct DisAsmField *field, FILE *out_file)
 
         switch (*((int *)(field->code_buffer + field->pc)))
         {
-            case  FIRST_REG: fprintf(out_file, "rax");
-                            break;
-            case SECOND_REG: fprintf(out_file, "rbx");
-                            break;
-            case  THIRD_REG: fprintf(out_file, "rcx");
-                            break;
-            case FOURTH_REG: fprintf(out_file, "rdx");
-                            break;
+            case   FIRST_REG: fprintf(out_file, "rax");
+                              break;
+            case  SECOND_REG: fprintf(out_file, "rbx");
+                              break;
+            case   THIRD_REG: fprintf(out_file, "rcx");
+                              break;
+            case  FOURTH_REG: fprintf(out_file, "rdx");
+                              break;
+            case   FIFTH_REG: fprintf(out_file, "rex");
+                              break;
+            case   SIXTH_REG: fprintf(out_file, "rfx");
+                              break;
+            case SEVENTH_REG: fprintf(out_file, "rgx");
+                              break;
+            case  EIGHTH_REG: fprintf(out_file, "rhx");
+                              break;
+            case   NINTH_REG: fprintf(out_file, "rix");
+                              break;
+            case   TENTH_REG: fprintf(out_file, "rjx");
+                              break;
 
             default: return WRONG_REG_ERROR;
                      break;

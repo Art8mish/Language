@@ -109,32 +109,57 @@ DEF_CMD(DIV, 7, 0,
     StackPush(&field->stk,  lhs / rhs);
 })
 
-DEF_CMD(SQRT, 9, 0,
+DEF_CMD(POW, 9, 0,
+{
+    StackPop (&field->stk, &rhs);
+    StackPop (&field->stk, &lhs);
+    StackPush(&field->stk,  pow(lhs, rhs));
+})
+
+DEF_CMD(SQRT, 10, 0,
 {
     StackPop (&field->stk, &rhs);
     ERROR_CHECK(rhs < 0, INCORRECT_SQRT_VALUE_ERROR);
     StackPush(&field->stk, sqrt(rhs));
 })
 
-DEF_CMD(DUMP, 10, 0,
+DEF_CMD(SIN, 11, 0,
+{
+    StackPop (&field->stk, &rhs);
+    StackPush(&field->stk, sin(rhs));
+})
+
+DEF_CMD(COS, 12, 0,
+{
+    StackPop (&field->stk, &rhs);
+    StackPush(&field->stk, cos(rhs));
+})
+
+DEF_CMD(TAN, 13, 0,
+{
+    StackPop (&field->stk, &rhs);
+    StackPush(&field->stk, tan(rhs));
+})
+
+DEF_CMD(DUMP, 14, 0,
 {
     DumpProcessor(field);
 })
 
-DEF_CMD(OUT, 11, 0,
+DEF_CMD(OUT, 15, 0,
 {
     StackPop (&field->stk, &rhs);
     printf("out: %g\n", rhs);
 })
 
-DEF_CMD(IN, 12, 0,
+DEF_CMD(IN, 17, 0,
 {
     printf("Enter a number: ");
     scanf("%lf", &arg_val);
     StackPush(&field->stk, arg_val);
 })
 
-DEF_CMD(RAM, 13, 0,
+DEF_CMD(RAM, 18, 0,
 {
     //print RAM
     for (int i = 0; i < (int)RAM_SIZE; i++)
@@ -147,20 +172,20 @@ DEF_CMD(RAM, 13, 0,
     printf("\n");
 })
 
-DEF_CMD(RET, 14, 0,
+DEF_CMD(RET, 19, 0,
 {
     StackPop (&field->ret_adr, &rhs);
     field->pc = (int)rhs - 1;
 })
 
-DEF_CMD(RSIN, 15, 0,
+DEF_CMD(RSIN, 20, 0,
 {
     StackPop (&field->stk, &rhs);
     StackPop (&field->stk, &lhs);
     StackPush(&field->stk, (lhs * sin(rhs * PI / 180)));
 })
 
-DEF_CMD(RCOS, 17, 0,
+DEF_CMD(RCOS, 21, 0,
 {
     StackPop (&field->stk, &rhs);
     StackPop (&field->stk, &lhs);

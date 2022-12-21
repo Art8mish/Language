@@ -8,24 +8,36 @@
 #include "../cpu_functions/cpu/include/cpu.h"
 #include "../cpu_functions/disasm/include/disasm.h"*/
 
+
 #include "../tree_functions/include/tree.h"
 #include "math.h"
 #include "common.h"
 #include "rus_trans.h"
 
 
-static const char *const       LOG_FILE_PATH = "io/log.txt";
-static const char *const   CODE_IN_FILE_PATH = "io/code_in.txt";
-static const char *const  CODE_OUT_FILE_PATH = "io/code_out.txt";
-static const char *const ASM_INPUT_FILE_PATH = "io/asm_input.txt";
+static const char *const      LOG_FILE_PATH = "io/log.txt";
+static const char *const  CODE_IN_FILE_PATH = "io/code_in.txt";
+static const char *const CODE_OUT_FILE_PATH = "io/code_out.txt";
+static const char *const   ASM_IN_FILE_PATH = "cpu_functions/io/asm_input.txt";
 
 enum LangError
 {
-    ERROR_PRINT_LANG_NODE = 1,
-    ERROR_PRINT_EXT_ST    = 2,
-    ERROR_PRINT_EXP       = 3,
-    ERROR_PRINT_CALL      = 4,
-    ERROR_PRINT_VAL       = 5,
+    ERROR_PRINT_LANG_NODE   = 1,
+    ERROR_PRINT_EXT_ST      = 2,
+    ERROR_PRINT_EXP         = 3,
+    ERROR_PRINT_CALL        = 4,
+    ERROR_PRINT_VAL         = 5,
+    ERROR_DEF_FUNC          = 6,
+    ERROR_GENERATE_ASM_FILE = 7,
+    ERROR_LANG_CONTEX_CTOR  = 8,
+    ERROR_PREPARE_ASM       = 9,
+    ERROR_ASM_EXT           = 10,
+    ERROR_ASM_EXP           = 11,
+    ERROR_PROC_ASM_STR      = 12,
+    ERROR_ASM_ST_STREAM     = 13,
+    ERROR_ASM_IF            = 14,
+    ERROR_ASM_WHILE         = 15,
+    ERROR_ASM_VAR           = 16,
 };
 
 enum NodeType
@@ -85,42 +97,63 @@ typedef struct LangNode LangNode;
 
 struct LangContext
 {
-    struct Tree *tree = NULL;
-    struct Var  *vars = NULL;
+    struct Var  *ext_vars = NULL;
+    unsigned int ext_vars_amount = 0;
+
+    struct Func *funcs = NULL;
+    unsigned int funcs_amount = 0;
+
+    unsigned int rix = 0;
+    unsigned int curr_func = 0;
 };
 
 struct Var
 {
-    const char  *name   = PSN_STR;
-    unsigned int adress = 0;
+    const char *name = NULL;
+    int adress       = 0;
 };
+typedef struct Var Var;
 
-static const char *S_VAR    = "var";//"хуй_поймЄшь";
-static const char *S_ST_SEP = ";";//"бл€_буду";
-static const char *S_IF     = "if";//"пиздец?";
-static const char *S_ELSE   = "else";//"пиздец!";
-static const char *S_WHILE  = "while";//"ху€рим";
-static const char *S_TYPE   = "type";//"хуй_с_солью";
-static const char *S_VOID   = "void";//"хуй_без_соли";
-static const char *S_RET    = "return";//"заебалс€";
-static const char *S_EQ     = "=";//"это_бл€";
+struct Func
+{
+    const char  *name = NULL;
+    NodeType ret_type = T_VOID;
+    
+    struct Var  *vars = NULL;
+    unsigned int vars_amount = 0;
+};
+typedef struct Func Func;
 
-static const char *S_IN     = "scanf";//"пиздеть_не_мешки_ворочить";
-static const char *S_OUT    = "printf";//"нука_спиздани";
 
-static const char *S_EXP_L_BRCKT = "(";//"чЄ_за_хуйн€";
-static const char *S_EXP_R_BRCKT = ")";//"похуй_пл€шем";
-static const char *S_ST_L_BRCKT  = "{";//"слышь_бл€";
-static const char *S_ST_R_BRCKT  = "}";//"нахуй_иди";
+const char *REGS_NAME[MAX_FUNC_RECIEVED_VAR] = 
+                {"rax", "rbx", "rcx", "rdx", "rex"};
 
-static const char *S_ADD = "+";//"доебнуть";
-static const char *S_SUB = "-";//"отъебнуть";
-static const char *S_MUL = "*";//"въебать";
-static const char *S_DIV = "/";//"разъебать";
-static const char *S_POW = "pow";//"уебашить";
-static const char *S_SIN = "sin";//"хуинус";
-static const char *S_COS = "cos";//"хуЄсинус";
-static const char *S_TG  = "tg";//"ху€нгенс";
+static const char *S_VAR    = "var";
+static const char *S_ST_SEP = ";";
+static const char *S_IF     = "if";
+static const char *S_ELSE   = "else";
+static const char *S_WHILE  = "while";
+static const char *S_TYPE   = "type";
+static const char *S_VOID   = "void";
+static const char *S_RET    = "return";
+static const char *S_EQ     = "=";
+
+static const char *S_IN     = "scanf";
+static const char *S_OUT    = "printf";
+
+static const char *S_EXP_L_BRCKT = "(";
+static const char *S_EXP_R_BRCKT = ")";
+static const char *S_ST_L_BRCKT  = "{";
+static const char *S_ST_R_BRCKT  = "}";
+
+static const char *S_ADD = "+";
+static const char *S_SUB = "-";
+static const char *S_MUL = "*";
+static const char *S_DIV = "/";
+static const char *S_POW = "pow";
+static const char *S_SIN = "sin";
+static const char *S_COS = "cos";
+static const char *S_TG  = "tg";
 
 struct Tree *LangTreeDeserialize(const char *input_file_name);
 

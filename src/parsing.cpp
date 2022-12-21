@@ -359,6 +359,7 @@ int ProcessFunction(LexStruct *lex_structs, char **buf, unsigned int *index)
     LEX_ERROR(buf         == NULL, ERROR_NULL_PTR, *index);
     LEX_ERROR(index       == NULL, ERROR_NULL_PTR, *index);
 
+    printf("%s\n", *buf);
     SKIP_SPACE(*buf, ERROR_SYNTAX);
     char str[MAX_STR_SIZE] = { 0 };
     READ_WHILE(str, **buf != '(' && !isspace(**buf));
@@ -798,11 +799,14 @@ TreeNode *GetStatement(const LexStruct *lex_structs, unsigned int *index)
         TIE(st_node, ret_node, TREE_TIE_LEFT, NDTOR(st_node);
                                               NDTOR(ret_node););
 
-        TreeNode *exp_node = GetExp(lex_structs, index);
-        SAFE_LEX_ERROR(exp_node == NULL, NDTOR(st_node);, NULL, *index);
+        if (STRCT_T != LT_ST_SEP)
+        {
+            TreeNode *exp_node = GetExp(lex_structs, index);
+            SAFE_LEX_ERROR(exp_node == NULL, NDTOR(st_node);, NULL, *index);
 
-        TIE(ret_node, exp_node, TREE_TIE_LEFT, NDTOR(st_node);
-                                               NDTOR(exp_node););
+            TIE(ret_node, exp_node, TREE_TIE_LEFT, NDTOR(st_node);
+                                                   NDTOR(exp_node););
+        }
 
         SAFE_LEX_ERROR(STRCT_T != LT_ST_SEP, NDTOR(st_node);, NULL, *index);
         (*index)++;
