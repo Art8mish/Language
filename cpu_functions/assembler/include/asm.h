@@ -67,7 +67,7 @@ const size_t ASM_VERSION     = 1;
 const size_t MAX_WORD_LEN    = 34;
 const size_t HEADER_SIZE     = 3;
 const size_t MAX_LINE_SIZE   = 3;
-const size_t LABELS_AMOUNT   = 10;
+const size_t LABELS_AMOUNT   = 300;
 const size_t REGISTER_LENGTH = 3;
 
 const int LABEL_VALUE_POISON = -1;

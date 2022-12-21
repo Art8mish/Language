@@ -684,7 +684,6 @@ int AsmSt(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 }
 
 
-
 int AsmEq(FILE *asmfile, TreeNode *node, LangContext *l_cntxt)
 {
     ERROR_CHECK(asmfile == NULL, ERROR_NULL_PTR);
