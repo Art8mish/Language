@@ -22,6 +22,7 @@ static const char *const   ASM_IN_FILE_PATH = "cpu_functions/io/asm_input.txt";
 
 enum LangError
 {
+    ERROR_NO_RESULT        = -1,
     ERROR_PRINT_LANG_NODE   = 1,
     ERROR_PRINT_EXT_ST      = 2,
     ERROR_PRINT_EXP         = 3,
@@ -38,6 +39,11 @@ enum LangError
     ERROR_ASM_IF            = 14,
     ERROR_ASM_WHILE         = 15,
     ERROR_ASM_VAR           = 16,
+    ERROR_FIND_VAR          = 17,
+    ERROR_COUNT_VAR_INIT    = 18,
+    ERROR_ASM_INIT_LOC_VAR  = 19,
+    ERROR_ASM_INIT_PARAMS   = 20,
+    ERROR_ASM_IN_OUT        = 21,
 };
 
 enum NodeType
@@ -80,6 +86,12 @@ enum ArithmOp
     OP_TG  = 8,
 };
 
+enum VarType
+{
+    NO_VAR       = -1,
+    LOCAL_VAR    =  1,
+    EXTERNAL_VAR =  2
+};
 
 typedef double num_t;
 const num_t NUM_PSN = NAN;
